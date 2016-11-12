@@ -9,14 +9,12 @@ public class Student {
 	int age;
 	
 	public Student(String firstName, String lastName, int group) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.group = group;
 	}
 
 	public Student(String lastName, Course[] coursesTaken) {
-		super();
 		this.lastName = lastName;
 		this.coursesTaken = coursesTaken;
 	}

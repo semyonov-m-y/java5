@@ -1,10 +1,10 @@
 package javacore5.homework3.Task3;
 
 public class CollegeStudent extends Student {
-	
-	String collegeName;
-	int rating;
-	long id;
+
+	private String collegeName;
+	private int rating;
+	private long id;
 	
 	public CollegeStudent(String firstName, String lastName, int group) {
 		super(firstName, lastName, group);

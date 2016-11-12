@@ -1,6 +1,6 @@
-package javacore5.homework;
+package javacore5.homework1;
 
-public class ThirdClass {
+public class Fifth {
 
     public static void main(String[] args) {
         System.out.println("Мой первый класс на Java");

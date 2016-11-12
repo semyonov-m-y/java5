@@ -1,21 +1,16 @@
 package javacore5.homework3.Task3;
 
 public class SpecialStudent extends CollegeStudent {
-	
-	long secretKey;
-	String email;
+
+	private long secretKey;
+	private String email;
 	
 	public SpecialStudent(String firstName, String lastName, int group) {
 		super(firstName, lastName, group);
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.group = group;
 	}
 
 	public SpecialStudent(String lastName, Course[] coursesTaken) {
 		super(lastName, coursesTaken);
-		this.lastName = lastName;
-		this.coursesTaken = coursesTaken;
 	}
 
 	public SpecialStudent(String firstName, String lastName, int group, long secretKey) {

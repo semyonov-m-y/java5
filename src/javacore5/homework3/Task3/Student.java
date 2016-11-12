@@ -2,11 +2,11 @@ package javacore5.homework3.Task3;
 
 public class Student {
 	
-	String firstName;
-	String lastName;
-	int group;
-	Course[] coursesTaken;
-	int age;
+	private String firstName;
+	private String lastName;
+	private int group;
+	private Course[] coursesTaken;
+	private int age;
 	
 	public Student(String firstName, String lastName, int group) {
 		this.firstName = firstName;

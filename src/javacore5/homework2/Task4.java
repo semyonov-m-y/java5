@@ -1,4 +1,4 @@
-package javacore5.work2;
+package javacore5.homework2;
 
 public class Task4 {
 

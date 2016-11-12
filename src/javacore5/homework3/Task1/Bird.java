@@ -10,9 +10,6 @@ public class Bird {
 	}
 	
 	public static void sing(String s) {
-		System.out.println(s + "");
-		System.out.println(s);
-		System.out.println(s);
 		System.out.println(s);
 	}
 }

@@ -32,15 +32,11 @@ public class User {
 	}
 	
 	public int companyNameLength(String companyName) {
-		char[] charArray = companyName.toCharArray();
-		int charLength = charArray.length;
-		
-		return charLength;
+		return this.companyName.length();
 	}
 	
 	public int monthsIncreaser(int addMonth) {
-		monthsOfEmployment += addMonth;
-		return monthsOfEmployment;
+		return monthsOfEmployment + addMonth;
 	}
 
 	public String getName() {

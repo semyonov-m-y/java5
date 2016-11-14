@@ -36,7 +36,8 @@ public class User {
 	}
 	
 	public int monthsIncreaser(int addMonth) {
-		return monthsOfEmployment + addMonth;
+				monthsOfEmployment += addMonth;
+				return monthsOfEmployment;
 	}
 
 	public String getName() {

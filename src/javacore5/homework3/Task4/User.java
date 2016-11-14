@@ -35,9 +35,8 @@ public class User {
 		return this.companyName.length();
 	}
 	
-	public int monthsIncreaser(int addMonth) {
+	public void monthsIncreaser(int addMonth) {
 				monthsOfEmployment += addMonth;
-				return monthsOfEmployment;
 	}
 
 	public String getName() {

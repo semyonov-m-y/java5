@@ -2,12 +2,12 @@ package javacore5.homework3.Task4;
 
 public class User {
 	
-	String name;
-	int balance;
-	int monthsOfEmployment;
-	String companyName;
-	int salary;
-	String currency;
+	private String name;
+	private int balance;
+	private int monthsOfEmployment;
+	private String companyName;
+	private int salary;
+	private String currency;
 
 	public User(String name, int balance, int monthOfEmployment,
 				String companyName, int salary, String currency) {
@@ -25,9 +25,9 @@ public class User {
 	
 	public double withdraw(int summ) {
 		if (summ < 1000) {
-			return summ + (summ*0.05);
+			return balance - summ + (summ*0.05);
 		} else {
-			return summ + (summ*0.1);
+			return balance - summ + (summ*0.1);
 		}
 	}
 	

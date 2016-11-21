@@ -34,8 +34,8 @@ public class Main extends BankSystemImpl {
 		
 		bsImpl.fundUser(user1, 100);
 		bsImpl.fundUser(user2, 1000);
-		bsImpl.fundUser(user3, 3000);
-		bsImpl.fundUser(user4, 4000);
+		bsImpl.fundUser(user3, 10000);
+		bsImpl.fundUser(user4, 14000);
 		bsImpl.fundUser(user5, 5000);
 		bsImpl.fundUser(user6, 10000);
 		

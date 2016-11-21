@@ -4,40 +4,40 @@ public class BankSystemImpl implements BankSystem {
 
 	@Override
 	public void withdrawOfUser(User user, int amount) {
-		System.out.print("Выдача денежных средств: ");
+		System.out.print("Withdrawal of funds: ");
 			if (amount > user.getBank().getLimitOfWithdrawal()) {
-				System.out.println("Вы привысили лимит снятия денежных средств!");
+				System.out.println("You exceeded the limit of cash withdrawal!");
 				return;
 			}
 		
 		user.setBalance(user.getBalance() - amount - (amount*user.getBank().getCommission(amount))/100);
-		System.out.println("Ваш баланс: " + user.getBalance());
+		System.out.println("Your balance:" + user.getBalance());
 	}
 
 	@Override
 	public void fundUser(User user, int amount) {
-		System.out.print("Внесение денежных средств: ");
+		System.out.print("Adding funds: ");
 			if (amount > user.getBank().getLimitOfFunding()) {
-				System.out.println("Вы привысили лимит внесения денежных средств!");
+				System.out.println("You exceeded the limit of money adding!");
 				return;
 			}
 		
 		user.setBalance(user.getBalance() + amount);
-		System.out.println("Ваш баланс: " + user.getBalance());
+		System.out.println("Your balance:" + user.getBalance());
 	}
 
 	@Override
 	public void transferMoney(User fromUser, User toUser, int amount) {
-		System.out.print("Перевод денежных средств: ");
+		System.out.print("Money transfer: ");
 		fromUser.setBalance(fromUser.getBalance() - amount - (amount*fromUser.getBank().getCommission(amount))/100);
 		toUser.setBalance(toUser.getBalance() + amount);
-		System.out.println("Ваш баланс: " + fromUser.getBalance());
+		System.out.println("Your balance:" + fromUser.getBalance());
 	}
 
 	@Override
 	public void paySalary(User user) {
-		System.out.print("Зачисление заработной платы: ");
+		System.out.print("Enrollment wages: ");
 		user.setBalance(user.getBalance() + user.getSalary());
-		System.out.println("Ваш баланс: " + user.getBalance());
+		System.out.println("Your balance:" + user.getBalance());
 	}
 }

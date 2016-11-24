@@ -10,12 +10,6 @@ public abstract class Bank {
 	private long rating;
 	private long totalCapital;
 
-	public enum Currency {
-
-		USD,
-		EUR
-	}
-
 	public Bank(long id, String bankCountry, Currency currency,
 			int numberOfEmployees, double avrSalaryOfEmployee, long rating,
 			long totalCapital) {

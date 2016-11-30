@@ -4,7 +4,7 @@ public abstract class Bank {
 	
 	private long id;
 	private String bankCountry;
-	protected Currency currency;
+	private Currency currency;
 	private int numberOfEmployees;
 	private double avrSalaryOfEmployee;
 	private long rating;

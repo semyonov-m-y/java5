@@ -10,7 +10,7 @@ public class Main {
 		controller.requestRooms(1000, 1, "Landmark", "New York");
 		controller.requestRooms(2000, 2, "Arlington", "Jackson");
 
-		for(Room r : controller.requestRooms(1000, 1, "Landmark", "New York")) {
+		for (Room r : controller.requestRooms(1000, 1, "Landmark", "New York")) {
 			System.out.println(r.getId());
 		}
 

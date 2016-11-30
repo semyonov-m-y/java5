@@ -1,4 +1,4 @@
-package javacore5.homework1;
+package main.javacore5.homework1;
 
 public class Fourth {
 

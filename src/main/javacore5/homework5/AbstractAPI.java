@@ -6,7 +6,7 @@ public abstract class AbstractAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         int countRooms = 0;
         for (Room r : getAll()) {
-            if (r.getPrice() == price && r.getPersons() == persons && r.getCityName() == city && r.getHotelName()==hotel){
+            if (r.getPrice() == price && r.getPersons() == persons && r.getCityName() == city && r.getHotelName()== hotel) {
                 countRooms++;
             }
         }
@@ -15,7 +15,7 @@ public abstract class AbstractAPI implements API {
 
         int index = 0;
         for (Room r : getAll()) {
-            if (r.getPrice() == price && r.getPersons() == persons && r.getCityName() == city && r.getHotelName()==hotel){
+            if (r.getPrice() == price && r.getPersons() == persons && r.getCityName() == city && r.getHotelName()== hotel) {
                 roomsFound[index] = r;
             }
         }

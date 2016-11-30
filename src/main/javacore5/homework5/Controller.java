@@ -26,7 +26,7 @@ public class Controller {
 		int countEqualRooms = 0;
 		for (int i = 0; i < api1.getAll().length ; i++) {
 			for (int j = 0; j < api1.getAll().length; j++) {
-				if(api1.getAll()[i].equals(api2.getAll()[j])){
+				if(api1.getAll()[i].equals(api2.getAll()[j])) {
 					countEqualRooms++;
 				}
 			}
@@ -35,7 +35,7 @@ public class Controller {
 		Room[] equalRoomsResult = new Room[countEqualRooms];
 
 		for (int i = 0; i < api1.getAll().length; i++) {
-			if (api1.getAll()[i].equals(api2.getAll()[i])){
+			if (api1.getAll()[i].equals(api2.getAll()[i])) {
 				equalRoomsResult[i] = api1.getAll()[i];
 			}
 		}

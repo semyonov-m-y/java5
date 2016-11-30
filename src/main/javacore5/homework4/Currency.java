@@ -1,4 +1,4 @@
-package javacore5.homework4;
+package main.javacore5.homework4;
 
 public enum Currency {
 

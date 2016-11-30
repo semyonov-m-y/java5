@@ -1,11 +1,11 @@
-package javacore5.homework4;
+package main.javacore5.homework4;
 
-public class EUBank extends Bank  {
+public class ChinaBank extends Bank  {
 
 	Currency currency;
 
-	public EUBank(long id, String bankCountry, Currency currency,
-				  int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+	public ChinaBank(long id, String bankCountry, Currency currency,
+					 int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
 		super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee,
 				rating, totalCapital);
 		this.currency = currency;
@@ -15,9 +15,9 @@ public class EUBank extends Bank  {
 	public int getLimitOfWithdrawal() {
 		int withdrawal = 0;
 		if (currency == Currency.USD) {
-			withdrawal = 2000;
+			withdrawal = 100;
 		} else if(currency == Currency.EUR) {
-			withdrawal = 2200;
+			withdrawal = 150;
 		}
 
 		return withdrawal;
@@ -27,7 +27,7 @@ public class EUBank extends Bank  {
 	public int getLimitOfFunding() {
 		int funding = 0;
 		if (currency == Currency.EUR) {
-			funding = 20000;
+			funding = 5000;
 		} else if (currency == Currency.USD) {
 			funding = 10000;
 		}
@@ -39,9 +39,9 @@ public class EUBank extends Bank  {
 	public int getMonthlyRate() {
 		int rate = 0;
 		if (currency == Currency.USD) {
-			rate = 0;
-		} else if(currency == Currency.EUR) {
 			rate = 1;
+		} else if(currency == Currency.EUR) {
+			rate = 0;
 		}
 
 		return rate;
@@ -51,11 +51,11 @@ public class EUBank extends Bank  {
 	public int getCommission(int summ) {
 		int commission = 0;
 		if (currency == Currency.USD ) {
-			commission = summ <= 1000 ? 5 : 7;
+			commission = summ <= 1000 ? 3 : 5;
 		}
 
 		if (currency == Currency.EUR) {
-			commission = summ <= 1000 ? 2 : 4;
+			commission = summ <= 1000 ? 10 : 11;
 		}
 
 		return commission;

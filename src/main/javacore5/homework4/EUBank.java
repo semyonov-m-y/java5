@@ -1,10 +1,10 @@
-package javacore5.homework4;
+package main.javacore5.homework4;
 
-public class USBank extends Bank {
+public class EUBank extends Bank  {
 
 	Currency currency;
 
-	public USBank(long id, String bankCountry, Currency currency,
+	public EUBank(long id, String bankCountry, Currency currency,
 				  int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
 		super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee,
 				rating, totalCapital);
@@ -15,9 +15,9 @@ public class USBank extends Bank {
 	public int getLimitOfWithdrawal() {
 		int withdrawal = 0;
 		if (currency == Currency.USD) {
-			withdrawal = 1000;
+			withdrawal = 2000;
 		} else if(currency == Currency.EUR) {
-			withdrawal = 1200;
+			withdrawal = 2200;
 		}
 
 		return withdrawal;
@@ -27,9 +27,9 @@ public class USBank extends Bank {
 	public int getLimitOfFunding() {
 		int funding = 0;
 		if (currency == Currency.EUR) {
-			funding = 10000;
+			funding = 20000;
 		} else if (currency == Currency.USD) {
-			funding = Integer.MAX_VALUE;
+			funding = 10000;
 		}
 
 		return funding;
@@ -39,9 +39,9 @@ public class USBank extends Bank {
 	public int getMonthlyRate() {
 		int rate = 0;
 		if (currency == Currency.USD) {
-			rate = 1;
+			rate = 0;
 		} else if(currency == Currency.EUR) {
-			rate = 2;
+			rate = 1;
 		}
 
 		return rate;
@@ -55,9 +55,9 @@ public class USBank extends Bank {
 		}
 
 		if (currency == Currency.EUR) {
-			commission = summ <= 1000 ? 6 : 8;
+			commission = summ <= 1000 ? 2 : 4;
 		}
-		
+
 		return commission;
 	}
 }

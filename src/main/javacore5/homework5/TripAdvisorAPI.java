@@ -1,10 +1,10 @@
-package javacore5.homework5;
+package main.javacore5.homework5;
 
 import java.util.Date;
 
 public class TripAdvisorAPI extends AbstractAPI {
 
-	Room[] tripRooms;
+	private Room[] tripRooms;
 
 	public TripAdvisorAPI() {
 		tripRooms = new Room[5];

@@ -1,10 +1,10 @@
-package javacore5.homework5;
+package main.javacore5.homework5;
 
 import java.util.Date;
 
 public class GoogleAPI extends AbstractAPI {
 
-	Room[] googleRooms;
+	private Room[] googleRooms;
 
 	public GoogleAPI() {
 		googleRooms = new Room[5];

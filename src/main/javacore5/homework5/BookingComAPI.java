@@ -1,10 +1,10 @@
-package javacore5.homework5;
+package main.javacore5.homework5;
 
 import java.util.Date;
 
 public class BookingComAPI extends AbstractAPI {
 
-	Room[] bookingRooms;
+	private Room[] bookingRooms;
 
 	public BookingComAPI() {
 		bookingRooms = new Room[5];

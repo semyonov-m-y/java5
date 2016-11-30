@@ -1,15 +1,15 @@
-package javacore5.homework5;
+package main.javacore5.homework5;
 
 import java.util.Date;
 
 public class Room {
-	
-	long id;
-	int price;
-	int persons;
-	Date dateAvailableFrom;
-	String hotelName;
-	String cityName;
+
+	private long id;
+	private int price;
+	private int persons;
+	private Date dateAvailableFrom;
+	private String hotelName;
+	private String cityName;
 	
 	public Room(long id, int price, int person, Date dateAvailableFrom,
 			String hotelName, String cityName) {
@@ -95,7 +95,4 @@ public class Room {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
-	
-	
-	
 }

@@ -1,4 +1,4 @@
-package javacore5.homework5;
+package main.javacore5.homework5;
 
 import java.util.Date;
 

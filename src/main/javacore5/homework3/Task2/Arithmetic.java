@@ -1,4 +1,4 @@
-package javacore5.homework3.Task2;
+package main.javacore5.homework3.Task2;
 
 public class Arithmetic {
 

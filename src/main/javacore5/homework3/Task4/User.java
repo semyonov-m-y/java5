@@ -1,4 +1,4 @@
-package javacore5.homework3.Task4;
+package main.javacore5.homework3.Task4;
 
 public class User {
 	

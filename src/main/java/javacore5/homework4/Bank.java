@@ -1,92 +1,92 @@
 package main.java.javacore5.homework4;
 
 public abstract class Bank {
-	
-	private long id;
-	private String bankCountry;
-	private Currency currency;
-	private int numberOfEmployees;
-	private double avrSalaryOfEmployee;
-	private long rating;
-	private long totalCapital;
 
-	public Bank(long id, String bankCountry, Currency currency,
-			int numberOfEmployees, double avrSalaryOfEmployee, long rating,
-			long totalCapital) {
-		this.id = id;
-		this.bankCountry = bankCountry;
-		this.currency = currency;
-		this.numberOfEmployees = numberOfEmployees;
-		this.avrSalaryOfEmployee = avrSalaryOfEmployee;
-		this.rating = rating;
-		this.totalCapital = totalCapital;
-	}
-	
-	public abstract int getLimitOfWithdrawal();
-	
-	public abstract int getLimitOfFunding();
-	
-	public abstract int getMonthlyRate();
-	
-	public abstract int getCommission(int summ);
-	
-	public double moneyPaidMonthlyForSalary() {
-		return avrSalaryOfEmployee*numberOfEmployees;	
-	}
+    private long id;
+    private String bankCountry;
+    private Currency currency;
+    private int numberOfEmployees;
+    private double avrSalaryOfEmployee;
+    private long rating;
+    private long totalCapital;
 
-	public long getId() {
-		return id;
-	}
+    public Bank(long id, String bankCountry, Currency currency,
+                int numberOfEmployees, double avrSalaryOfEmployee, long rating,
+                long totalCapital) {
+        this.id = id;
+        this.bankCountry = bankCountry;
+        this.currency = currency;
+        this.numberOfEmployees = numberOfEmployees;
+        this.avrSalaryOfEmployee = avrSalaryOfEmployee;
+        this.rating = rating;
+        this.totalCapital = totalCapital;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public abstract int getLimitOfWithdrawal();
 
-	public String getBankCountry() {
-		return bankCountry;
-	}
+    public abstract int getLimitOfFunding();
 
-	public void setBankCountry(String bankCountry) {
-		this.bankCountry = bankCountry;
-	}
+    public abstract int getMonthlyRate();
 
-	public Currency getCurrency() {
-		return currency;
-	}
+    public abstract int getCommission(int summ);
 
-	public void setCurrency(Currency currency) {
-		this.currency = currency;
-	}
+    public double moneyPaidMonthlyForSalary() {
+        return avrSalaryOfEmployee * numberOfEmployees;
+    }
 
-	public int getNumberOfEmployees() {
-		return numberOfEmployees;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setNumberOfEmployees(int numberOfEmployees) {
-		this.numberOfEmployees = numberOfEmployees;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public double getAvrSalaryOfEmployee() {
-		return avrSalaryOfEmployee;
-	}
+    public String getBankCountry() {
+        return bankCountry;
+    }
 
-	public void setAvrSalaryOfEmployee(double avrSalaryOfEmployee) {
-		this.avrSalaryOfEmployee = avrSalaryOfEmployee;
-	}
+    public void setBankCountry(String bankCountry) {
+        this.bankCountry = bankCountry;
+    }
 
-	public long getRating() {
-		return rating;
-	}
+    public Currency getCurrency() {
+        return currency;
+    }
 
-	public void setRating(long rating) {
-		this.rating = rating;
-	}
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
 
-	public long getTotalCapital() {
-		return totalCapital;
-	}
+    public int getNumberOfEmployees() {
+        return numberOfEmployees;
+    }
 
-	public void setTotalCapital(long totalCapital) {
-		this.totalCapital = totalCapital;
-	}	
+    public void setNumberOfEmployees(int numberOfEmployees) {
+        this.numberOfEmployees = numberOfEmployees;
+    }
+
+    public double getAvrSalaryOfEmployee() {
+        return avrSalaryOfEmployee;
+    }
+
+    public void setAvrSalaryOfEmployee(double avrSalaryOfEmployee) {
+        this.avrSalaryOfEmployee = avrSalaryOfEmployee;
+    }
+
+    public long getRating() {
+        return rating;
+    }
+
+    public void setRating(long rating) {
+        this.rating = rating;
+    }
+
+    public long getTotalCapital() {
+        return totalCapital;
+    }
+
+    public void setTotalCapital(long totalCapital) {
+        this.totalCapital = totalCapital;
+    }
 }

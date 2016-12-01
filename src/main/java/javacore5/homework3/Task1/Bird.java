@@ -9,7 +9,7 @@ public class Bird {
         sing("I am Bird");
     }
 
-    public static void sing(String s) {
-        System.out.println(s);
+    public static void sing(String string) {
+        System.out.println(string);
     }
 }

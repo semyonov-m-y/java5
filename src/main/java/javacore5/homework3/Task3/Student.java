@@ -1,63 +1,63 @@
 package main.java.javacore5.homework3.Task3;
 
 public class Student {
-	
-	private String firstName;
-	private String lastName;
-	private int group;
-	private Course[] coursesTaken;
-	private int age;
-	
-	public Student(String firstName, String lastName, int group) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.group = group;
-	}
 
-	public Student(String lastName, Course[] coursesTaken) {
-		this.lastName = lastName;
-		this.coursesTaken = coursesTaken;
-	}
+    private String firstName;
+    private String lastName;
+    private int group;
+    private Course[] coursesTaken;
+    private int age;
 
-	private String getFirstName() {
-		return firstName;
-	}
+    public Student(String firstName, String lastName, int group) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.group = group;
+    }
 
-	private void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public Student(String lastName, Course[] coursesTaken) {
+        this.lastName = lastName;
+        this.coursesTaken = coursesTaken;
+    }
 
-	private String getLastName() {
-		return lastName;
-	}
+    private String getFirstName() {
+        return firstName;
+    }
 
-	private void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    private void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	private int getGroup() {
-		return group;
-	}
+    private String getLastName() {
+        return lastName;
+    }
 
-	private void setGroup(int group) {
-		this.group = group;
-	}
+    private void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	private Course[] getCoursesTaken() {
-		return coursesTaken;
-	}
+    private int getGroup() {
+        return group;
+    }
 
-	private void setCoursesTaken(Course[] coursesTaken) {
-		this.coursesTaken = coursesTaken;
-	}
+    private void setGroup(int group) {
+        this.group = group;
+    }
 
-	private int getAge() {
-		return age;
-	}
+    private Course[] getCoursesTaken() {
+        return coursesTaken;
+    }
 
-	private void setAge(int age) {
-		this.age = age;
-	}
-	
-	
+    private void setCoursesTaken(Course[] coursesTaken) {
+        this.coursesTaken = coursesTaken;
+    }
+
+    private int getAge() {
+        return age;
+    }
+
+    private void setAge(int age) {
+        this.age = age;
+    }
+
+
 }

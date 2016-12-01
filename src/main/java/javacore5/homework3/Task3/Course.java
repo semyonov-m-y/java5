@@ -4,53 +4,53 @@ import java.util.Date;
 
 public class Course {
 
-	private Date startDate;
-	private String name;
-	private int hoursDuration;
-	private String teacherName;
-	
-	public Course(Date startDate, String name) {
-		this.startDate = startDate;
-		this.name = name;
-	}
+    private Date startDate;
+    private String name;
+    private int hoursDuration;
+    private String teacherName;
 
-	public Course(int hoursDuration, String name, String teacherName) {
-		this.name = name;
-		this.hoursDuration = hoursDuration;
-		this.teacherName = teacherName;
-	}
+    public Course(Date startDate, String name) {
+        this.startDate = startDate;
+        this.name = name;
+    }
 
-	private Date getStartDate() {
-		return startDate;
-	}
+    public Course(int hoursDuration, String name, String teacherName) {
+        this.name = name;
+        this.hoursDuration = hoursDuration;
+        this.teacherName = teacherName;
+    }
 
-	private void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
+    private Date getStartDate() {
+        return startDate;
+    }
 
-	private String getName() {
-		return name;
-	}
+    private void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
 
-	private void setName(String name) {
-		this.name = name;
-	}
+    private String getName() {
+        return name;
+    }
 
-	private int getHoursDuration() {
-		return hoursDuration;
-	}
+    private void setName(String name) {
+        this.name = name;
+    }
 
-	private void setHoursDuration(int hoursDuration) {
-		this.hoursDuration = hoursDuration;
-	}
+    private int getHoursDuration() {
+        return hoursDuration;
+    }
 
-	private String getTeacherName() {
-		return teacherName;
-	}
+    private void setHoursDuration(int hoursDuration) {
+        this.hoursDuration = hoursDuration;
+    }
 
-	private void setTeacherName(String teacherName) {
-		this.teacherName = teacherName;
-	}
-	
-	
+    private String getTeacherName() {
+        return teacherName;
+    }
+
+    private void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+
 }

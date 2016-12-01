@@ -1,4 +1,4 @@
-package main.javacore5.homework3.Task1;
+package main.java.javacore5.homework3.Task1;
 
 public class Bird {
 	

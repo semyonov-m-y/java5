@@ -1,4 +1,4 @@
-package main.javacore5.homework4;
+package main.java.javacore5.homework4;
 
 public interface BankSystem {
 

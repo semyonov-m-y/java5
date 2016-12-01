@@ -1,4 +1,4 @@
-package main.javacore5.homework5;
+package main.java.javacore5.homework5;
 
 public interface API {
 

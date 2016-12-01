@@ -10,8 +10,8 @@ public class Main {
         controller.requestRooms(1000, 1, "Landmark", "New York");
         controller.requestRooms(2000, 2, "Arlington", "Jackson");
 
-        for (Room r : controller.requestRooms(1000, 1, "Landmark", "New York")) {
-            System.out.println(r.getId());
+        for (Room oneRoom : controller.requestRooms(1000, 1, "Landmark", "New York")) {
+            System.out.println(oneRoom.getId());
         }
 
         API api1 = new BookingComAPI();
@@ -19,10 +19,10 @@ public class Main {
 
         controller.check(api1, api2);
 
-        Room r1 = new Room(3, 5000, 1, new Date(), "hotel", "city");
+        Room room1 = new Room(3, 5000, 1, new Date(), "hotel", "city");
         DAO dao = new DAOImpl();
 
-        dao.save(r1);
-        dao.delete(r1);
+        dao.save(room1);
+        dao.delete(room1);
     }
 }

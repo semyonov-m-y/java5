@@ -9,8 +9,7 @@ public class User {
     private int salary;
     private String currency;
 
-    public User(String name, int balance, int monthOfEmployment,
-                String companyName, int salary, String currency) {
+    public User(String name, int balance, int monthOfEmployment, String companyName, int salary, String currency) {
         this.name = name;
         this.balance = balance;
         this.monthsOfEmployment = monthOfEmployment;

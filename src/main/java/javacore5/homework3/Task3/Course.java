@@ -51,6 +51,4 @@ public class Course {
     private void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
     }
-
-
 }

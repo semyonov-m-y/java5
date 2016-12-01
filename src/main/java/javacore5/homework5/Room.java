@@ -24,19 +24,27 @@ public class Room {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
+
         Room other = (Room) obj;
-        if (price != other.price)
+
+        if (price != other.price) {
             return false;
-        if (persons != other.persons)
+        }
+        if (persons != other.persons) {
             return false;
-        if (cityName != other.cityName)
+        }
+        if (cityName != other.cityName) {
             return false;
+        }
         return true;
     }
 

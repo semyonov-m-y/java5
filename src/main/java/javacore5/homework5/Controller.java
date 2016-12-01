@@ -14,9 +14,10 @@ public class Controller {
 
         int i = 0;
         for (API a : apis) {
-            for (Room r : a.findRooms(price, persons, city, hotel))
+            for (Room r : a.findRooms(price, persons, city, hotel)) {
                 requestRoomsResult[i] = r;
-            i++;
+                i++;
+            }
         }
 
         return requestRoomsResult;

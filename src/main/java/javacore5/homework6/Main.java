@@ -20,9 +20,13 @@ public class Main {
         users[5] = user6;
 
         UserUtils.uniqueUsers(users);
+        System.out.println("");
         UserUtils.usersWithContitionalBalance(users, 20000);
+        System.out.println("");
         UserUtils.paySalaryToUsers(users);
+        System.out.println("");
         UserUtils.getUsersId(users);
+        System.out.println("");
         UserUtils.deleteEmptyUsers(users);
     }
 }

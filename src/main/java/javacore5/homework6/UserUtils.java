@@ -43,7 +43,6 @@ public class UserUtils extends User {
     }
 
     public static User[] usersWithContitionalBalance(User[] users, int balance) {
-        System.out.println("");
         for (int j = 0; j < users.length; j++) {
             if (users[j].getBalance() == balance) {
                 System.out.println(users[j].getFirstName() + " " + users[j].getLastName() + " " + users[j].getBalance());
@@ -56,7 +55,6 @@ public class UserUtils extends User {
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
-        System.out.println("");
         for (int k = 0; k < users.length; k++) {
             if (users[k].getSalary() > 0) {
                 int userSalary = users[k].getSalary();
@@ -69,7 +67,6 @@ public class UserUtils extends User {
     }
 
     public static final long[] getUsersId(User[] users) {
-        System.out.println("");
         long[] id = new long[users.length];
         for (int l = 0; l < users.length; l++) {
             id[l] = users[l].getId();
@@ -80,11 +77,11 @@ public class UserUtils extends User {
     }
 
     public static User[] deleteEmptyUsers(User[] users) {
-        System.out.println("");
         for (int m = 0; m < users.length; m++) {
             if (users[m].getFirstName().equals("") || users[m].getLastName().equals("")) {
-                System.out.println("User " + users[m].getId() + " " + users[m].getFirstName() + " " + users[m].getLastName() + " "
+                System.out.println("Deleted user is " + users[m].getId() + " " + users[m].getFirstName() + " " + users[m].getLastName() + " "
                         + users[m].getSalary() + " " + users[m].getBalance());
+                users[m] = null;
             }
         }
 

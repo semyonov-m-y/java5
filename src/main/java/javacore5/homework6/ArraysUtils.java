@@ -89,10 +89,6 @@ public final class ArraysUtils {
             arrayInt[arrayInt.length - i - 1] = temp;
         }
 
-        for (int j = 0; j < reverseArray.length; j++) {
-            System.out.print(reverseArray[j] + " ");
-        }
-
         return reverseArray;
     }
 
@@ -101,12 +97,6 @@ public final class ArraysUtils {
         for (int i = 0; i < arrayInt.length; i++) {
             if (i % 2 == 0) {
                 evenArray[i] = i;
-            }
-        }
-
-        for (int j = 0; j < evenArray.length; j++) {
-            if (j % 2 == 0) {
-                System.out.print(evenArray[j] + " ");
             }
         }
 

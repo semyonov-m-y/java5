@@ -33,34 +33,25 @@ public class UserUtils extends User {
             }
         }
 
-        for (int m = 0; m < uniqueUsers.length; m++) {
-            if (uniqueUsers[m] != null) {
-                System.out.println(uniqueUsers[m]);
-            }
-        }
-
         return uniqueUsers;
     }
 
     public static User[] usersWithContitionalBalance(User[] users, int balance) {
+        User[] usersWithContitionalBalance = users.clone();
         for (int j = 0; j < users.length; j++) {
             if (users[j].getBalance() == balance) {
-                System.out.println(users[j].getFirstName() + " " + users[j].getLastName() + " " + users[j].getBalance());
-            } else {
-                System.out.println("User " + users[j].getFirstName() + " " + users[j].getLastName()
-                        + " not with such balance.");
+                usersWithContitionalBalance[j] = users[j];
             }
         }
 
-        return users;
+        return usersWithContitionalBalance;
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
         for (int k = 0; k < users.length; k++) {
             if (users[k].getSalary() > 0) {
                 int userSalary = users[k].getSalary();
-                userSalary = users[k].getBalance() + userSalary;
-                System.out.println(users[k].getFirstName() + " " + users[k].getLastName() + " " + userSalary);
+                int userBalance = users[k].getBalance() + userSalary;
             }
         }
 
@@ -68,24 +59,24 @@ public class UserUtils extends User {
     }
 
     public static final long[] getUsersId(User[] users) {
-        long[] id = new long[users.length];
+        long[] usersId = new long[users.length];
         for (int l = 0; l < users.length; l++) {
-            id[l] = users[l].getId();
-            System.out.println(users[l].getFirstName() + " " + users[l].getLastName() + " " + users[l].getId());
+            usersId[l] = users[l].getId();
         }
 
-        return id;
+        return usersId;
     }
 
     public static User[] deleteEmptyUsers(User[] users) {
-        for (int m = 0; m < users.length; m++) {
-            if (users[m].getFirstName().equals("") || users[m].getLastName().equals("")) {
-                System.out.println("Deleted user is " + users[m].getId() + " " + users[m].getFirstName() + " "
-                        + users[m].getLastName() + " " + users[m].getSalary() + " " + users[m].getBalance());
-                users[m] = null;
+        User[] noEmptyUsers = new User[users.length];
+        for (int m = 0; m < noEmptyUsers.length; m++) {
+            if (users[m].getLastName() == null) {
+                // do nothing
+            } else {
+                noEmptyUsers[m] = users[m];
             }
         }
 
-        return users;
+        return noEmptyUsers;
     }
 }

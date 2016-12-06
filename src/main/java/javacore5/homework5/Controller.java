@@ -2,20 +2,20 @@ package main.java.javacore5.homework5;
 
 public class Controller {
 
-    API[] apis = {new BookingComAPI(), new GoogleAPI(), new TripAdvisorAPI()};
+    private API[] apis = {new BookingComAPI(), new GoogleAPI(), new TripAdvisorAPI()};
 
     Room[] requestRooms(int price, int persons, String city, String hotel) {
         int countRequestRooms = 0;
-        for (API a : apis) {
-            countRequestRooms += a.findRooms(price, persons, city, hotel).length;
+        for (API eachApi : apis) {
+            countRequestRooms += eachApi.findRooms(price, persons, city, hotel).length;
         }
 
         Room[] requestRoomsResult = new Room[countRequestRooms];
 
         int i = 0;
-        for (API a : apis) {
-            for (Room r : a.findRooms(price, persons, city, hotel)) {
-                requestRoomsResult[i] = r;
+        for (API eachApi : apis) {
+            for (Room nextRoom : eachApi.findRooms(price, persons, city, hotel)) {
+                requestRoomsResult[i] = nextRoom;
                 i++;
             }
         }

@@ -2,7 +2,7 @@ package main.java.javacore5.homework4;
 
 public class EUBank extends Bank {
 
-    Currency currency;
+    private Currency currency;
 
     public EUBank(long id, String bankCountry, Currency currency,
                   int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {

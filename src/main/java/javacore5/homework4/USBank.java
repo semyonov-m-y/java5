@@ -2,12 +2,11 @@ package main.java.javacore5.homework4;
 
 public class USBank extends Bank {
 
-    Currency currency;
+    private Currency currency;
 
     public USBank(long id, String bankCountry, Currency currency,
                   int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
-        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee,
-                rating, totalCapital);
+        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
         this.currency = currency;
     }
 

@@ -12,7 +12,6 @@ public class User {
 
     public User(long id, String name, double balance, int monthsOfEmployment,
                 String companyName, int salary, Bank bank) {
-        super();
         this.id = id;
         this.name = name;
         this.balance = balance;
@@ -24,9 +23,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", name=" + name + ", balance=" + balance
+        return "User [id=" + id
+                + ", name=" + name
+                + ", balance=" + balance
                 + ", monthsOfEmployment=" + monthsOfEmployment
-                + ", companyName=" + companyName + ", salary=" + salary
+                + ", companyName=" + companyName
+                + ", salary=" + salary
                 + ", bank=" + bank.getClass().getSimpleName() + "]";
     }
 

@@ -47,7 +47,8 @@ public class UserUtils extends User {
             if (users[j].getBalance() == balance) {
                 System.out.println(users[j].getFirstName() + " " + users[j].getLastName() + " " + users[j].getBalance());
             } else {
-                System.out.println("User " + users[j].getFirstName() + " " + users[j].getLastName() + " not with such balance.");
+                System.out.println("User " + users[j].getFirstName() + " " + users[j].getLastName()
+                        + " not with such balance.");
             }
         }
 
@@ -79,8 +80,8 @@ public class UserUtils extends User {
     public static User[] deleteEmptyUsers(User[] users) {
         for (int m = 0; m < users.length; m++) {
             if (users[m].getFirstName().equals("") || users[m].getLastName().equals("")) {
-                System.out.println("Deleted user is " + users[m].getId() + " " + users[m].getFirstName() + " " + users[m].getLastName() + " "
-                        + users[m].getSalary() + " " + users[m].getBalance());
+                System.out.println("Deleted user is " + users[m].getId() + " " + users[m].getFirstName() + " "
+                        + users[m].getLastName() + " " + users[m].getSalary() + " " + users[m].getBalance());
                 users[m] = null;
             }
         }

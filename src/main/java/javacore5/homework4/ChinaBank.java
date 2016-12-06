@@ -1,4 +1,4 @@
-package main.java.javacore5.homework4;
+package javacore5.homework4;
 
 public class ChinaBank extends Bank {
 

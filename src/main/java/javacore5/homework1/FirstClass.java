@@ -1,4 +1,4 @@
-package main.java.javacore5.homework1;
+package javacore5.homework1;
 
 public class FirstClass {
 

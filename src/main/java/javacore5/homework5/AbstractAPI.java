@@ -1,4 +1,4 @@
-package main.java.javacore5.homework5;
+package javacore5.homework5;
 
 public abstract class AbstractAPI implements API {
 

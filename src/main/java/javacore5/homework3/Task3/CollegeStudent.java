@@ -1,4 +1,4 @@
-package main.java.javacore5.homework3.Task3;
+package javacore5.homework3.Task3;
 
 public class CollegeStudent extends Student {
 

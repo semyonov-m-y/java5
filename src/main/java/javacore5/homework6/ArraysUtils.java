@@ -1,4 +1,4 @@
-package main.java.javacore5.homework6;
+package javacore5.homework6;
 
 
 public final class ArraysUtils {

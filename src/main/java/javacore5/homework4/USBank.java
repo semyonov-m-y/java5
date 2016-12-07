@@ -13,7 +13,7 @@ public class USBank extends Bank {
         int withdrawal = 0;
         if (super.getCurrency() == Currency.USD) {
             withdrawal = 1000;
-        } else if(super.getCurrency() == Currency.EUR) {
+        } else if (super.getCurrency() == Currency.EUR) {
             withdrawal = 1200;
         }
 
@@ -37,7 +37,7 @@ public class USBank extends Bank {
         int rate = 0;
         if (super.getCurrency() == Currency.USD) {
             rate = 1;
-        } else if(super.getCurrency() == Currency.EUR) {
+        } else if (super.getCurrency() == Currency.EUR) {
             rate = 2;
         }
 
@@ -47,11 +47,8 @@ public class USBank extends Bank {
     @Override
     public int getCommission(int summ) {
         int commission = 0;
-        if (super.getCurrency() == Currency.USD ) {
-            if (summ <= 1000)
-                commission = 5;
-            else
-                commission = 7;
+        if (super.getCurrency() == Currency.USD) {
+            commission = summ <= 1000 ? 5 : 7;
         } else if (super.getCurrency() == Currency.EUR) {
             commission = summ <= 1000 ? 6 : 8;
         }

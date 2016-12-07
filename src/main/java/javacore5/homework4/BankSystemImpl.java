@@ -33,7 +33,8 @@ public class BankSystemImpl implements BankSystem {
             System.out.println("You exceeded the limit of cash withdrawal!");
             return;
         } else {
-            fromUser.setBalance((fromUser.getBalance() - amount) - (amount * fromUser.getBank().getCommission(amount)) / 100);
+            fromUser.setBalance((fromUser.getBalance() - amount) - (amount * fromUser.getBank()
+                    .getCommission(amount)) / 100);
         }
 
         if (amount > toUser.getBank().getLimitOfFunding()) {

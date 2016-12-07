@@ -13,7 +13,7 @@ public class EUBank extends Bank {
         int withdrawal = 0;
         if (super.getCurrency() == Currency.USD) {
             withdrawal = 2000;
-        } else if(super.getCurrency() == Currency.EUR) {
+        } else if (super.getCurrency() == Currency.EUR) {
             withdrawal = 2200;
         }
 
@@ -37,7 +37,7 @@ public class EUBank extends Bank {
         int rate = 0;
         if (super.getCurrency() == Currency.USD) {
             rate = 0;
-        } else if(super.getCurrency() == Currency.EUR) {
+        } else if (super.getCurrency() == Currency.EUR) {
             rate = 1;
         }
 
@@ -47,7 +47,7 @@ public class EUBank extends Bank {
     @Override
     public int getCommission(int summ) {
         int commission = 0;
-        if (super.getCurrency() == Currency.USD ) {
+        if (super.getCurrency() == Currency.USD) {
             commission = summ <= 1000 ? 5 : 7;
         }
 

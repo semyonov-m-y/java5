@@ -13,7 +13,7 @@ public class ChinaBank extends Bank {
         int withdrawal = 0;
         if (super.getCurrency() == Currency.USD) {
             withdrawal = 100;
-        } else if(super.getCurrency() == Currency.EUR) {
+        } else if (super.getCurrency() == Currency.EUR) {
             withdrawal = 150;
         }
 
@@ -37,7 +37,7 @@ public class ChinaBank extends Bank {
         int rate = 0;
         if (super.getCurrency() == Currency.USD) {
             rate = 1;
-        } else if(super.getCurrency() == Currency.EUR) {
+        } else if (super.getCurrency() == Currency.EUR) {
             rate = 0;
         }
 
@@ -47,7 +47,7 @@ public class ChinaBank extends Bank {
     @Override
     public int getCommission(int summ) {
         int commission = 0;
-        if (getCurrency() == Currency.USD ) {
+        if (getCurrency() == Currency.USD) {
             commission = summ <= 1000 ? 3 : 5;
         }
 

@@ -2,20 +2,18 @@ package javacore5.homework4;
 
 public class ChinaBank extends Bank {
 
-    private Currency currency;
-
     public ChinaBank(long id, String bankCountry, Currency currency,
                      int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
-        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
-        this.currency = currency;
+        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee,
+                rating, totalCapital);
     }
 
     @Override
     public int getLimitOfWithdrawal() {
         int withdrawal = 0;
-        if (currency == Currency.USD) {
+        if (super.getCurrency() == Currency.USD) {
             withdrawal = 100;
-        } else if (currency == Currency.EUR) {
+        } else if(super.getCurrency() == Currency.EUR) {
             withdrawal = 150;
         }
 
@@ -25,9 +23,9 @@ public class ChinaBank extends Bank {
     @Override
     public int getLimitOfFunding() {
         int funding = 0;
-        if (currency == Currency.EUR) {
+        if (super.getCurrency() == Currency.EUR) {
             funding = 5000;
-        } else if (currency == Currency.USD) {
+        } else if (super.getCurrency() == Currency.USD) {
             funding = 10000;
         }
 
@@ -37,9 +35,9 @@ public class ChinaBank extends Bank {
     @Override
     public int getMonthlyRate() {
         int rate = 0;
-        if (currency == Currency.USD) {
+        if (super.getCurrency() == Currency.USD) {
             rate = 1;
-        } else if (currency == Currency.EUR) {
+        } else if(super.getCurrency() == Currency.EUR) {
             rate = 0;
         }
 
@@ -49,11 +47,11 @@ public class ChinaBank extends Bank {
     @Override
     public int getCommission(int summ) {
         int commission = 0;
-        if (currency == Currency.USD) {
+        if (getCurrency() == Currency.USD ) {
             commission = summ <= 1000 ? 3 : 5;
         }
 
-        if (currency == Currency.EUR) {
+        if (getCurrency() == Currency.EUR) {
             commission = summ <= 1000 ? 10 : 11;
         }
 

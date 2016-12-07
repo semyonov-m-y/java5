@@ -36,22 +36,33 @@ public class UserUtils extends User {
         return uniqueUsers;
     }
 
-    public static User[] usersWithContitionalBalance(User[] users, int balance) {
-        User[] usersWithContitionalBalance = users.clone();
+    public static User[] usersWithConditionalBalance(User[] users, int balance) {
+        int notEmpty = 0;
         for (int j = 0; j < users.length; j++) {
-            if (users[j].getBalance() == balance) {
-                usersWithContitionalBalance[j] = users[j];
+            if (users[j].getId() != 0 && users[j].getFirstName() != null && users[j].getLastName() != null
+                    && users[j].getSalary() != 0 && users[j].getBalance() != 0 && users[j].getBalance() == balance) {
+                notEmpty++;
             }
         }
 
-        return usersWithContitionalBalance;
+        User[] usersWithConditionalBalance = new User[notEmpty];
+
+        int count = 0;
+        for (int m = 0; m < users.length; m++) {
+            if (users[m].getId() != 0 && users[m].getFirstName() != null && users[m].getLastName() != null
+                    && users[m].getSalary() != 0 && users[m].getBalance() != 0 && users[m].getBalance() == balance) {
+                usersWithConditionalBalance[count] = users[m];
+                count++;
+            }
+        }
+
+        return usersWithConditionalBalance;
     }
 
     public static final User[] paySalaryToUsers(User[] users) {
         for (int k = 0; k < users.length; k++) {
             if (users[k].getSalary() > 0) {
-                int userSalary = users[k].getSalary();
-                int userBalance = users[k].getBalance() + userSalary;
+                int userCurrentBalance = users[k].setBalance(users[k].getBalance());
             }
         }
 
@@ -68,15 +79,25 @@ public class UserUtils extends User {
     }
 
     public static User[] deleteEmptyUsers(User[] users) {
-        User[] noEmptyUsers = new User[users.length];
-        for (int m = 0; m < noEmptyUsers.length; m++) {
-            if (users[m].getLastName() == null) {
-                // do nothing
-            } else {
-                noEmptyUsers[m] = users[m];
+        int notEmpty = 0;
+        for (int m = 0; m < users.length; m++) {
+            if (users[m].getId() != 0 && users[m].getFirstName() != null && users[m].getLastName() != null
+                    && users[m].getSalary() != 0 && users[m].getBalance() != 0) {
+                notEmpty++;
             }
         }
 
-        return noEmptyUsers;
+        User[] notEmptyUsers = new User[notEmpty];
+
+        int count = 0;
+        for (int m = 0; m < users.length; m++) {
+            if (users[m].getId() != 0 && users[m].getFirstName() != null && users[m].getLastName() != null
+                    && users[m].getSalary() != 0 && users[m].getBalance() != 0) {
+                notEmptyUsers[count] = users[m];
+                count++;
+            }
+        }
+
+        return notEmptyUsers;
     }
 }

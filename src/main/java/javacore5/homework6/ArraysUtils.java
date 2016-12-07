@@ -82,21 +82,35 @@ public final class ArraysUtils {
     }
 
     public static int[] reverse(int[] arrayInt) {
-        int[] reverseArray = new int[arrayInt.length];
-        for (int i = 0; i < arrayInt.length; i++) {
-            int temp = arrayInt[i];
-            reverseArray[i] = arrayInt[arrayInt.length - i - 1];
-            arrayInt[arrayInt.length - i - 1] = temp;
+        int[] reverseArray = arrayInt.clone();
+        for (int i = 0; i < reverseArray.length - 1; i++) {
+            for (int j = i + 1; j < reverseArray.length; j++) {
+                if (reverseArray[i] < reverseArray[j]) {
+                    int temp = reverseArray[j];
+                    reverseArray[j] = reverseArray[i];
+                    reverseArray[i] = temp;
+                }
+            }
         }
 
         return reverseArray;
     }
 
     public static int[] findEvenElements(int[] arrayInt) {
-        int[] evenArray = new int[arrayInt.length];
+        int noEmpty = 0;
+        for (int m = 0; m < arrayInt.length; m++) {
+            if (arrayInt[m] != 0) {
+                noEmpty++;
+            }
+        }
+
+        int[] evenArray = new int[noEmpty];
+
+        int count = 0;
         for (int i = 0; i < arrayInt.length; i++) {
-            if (i % 2 == 0) {
-                evenArray[i] = i;
+            if (arrayInt[i] % 2 == 0 && arrayInt[i] != 0) {
+                evenArray[count] = arrayInt[i];
+                count++;
             }
         }
 

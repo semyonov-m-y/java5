@@ -1,6 +1,8 @@
 package javacore5.homework6;
 
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.Arrays;
 
 public final class ArraysUtils {
@@ -85,15 +87,7 @@ public final class ArraysUtils {
 
     public static int[] reverse(int[] arrayInt) {
         int[] reverseArray = arrayInt.clone();
-        for (int i = 0; i < reverseArray.length - 1; i++) {
-            for (int j = i + 1; j < reverseArray.length; j++) {
-                if (reverseArray[i] < reverseArray[j]) {
-                    int temp = reverseArray[j];
-                    reverseArray[j] = reverseArray[i];
-                    reverseArray[i] = temp;
-                }
-            }
-        }
+        ArrayUtils.reverse(reverseArray);
 
         return reverseArray;
     }
@@ -117,9 +111,5 @@ public final class ArraysUtils {
         }
 
         return evenArray;
-    }
-
-    public static void main(String[] args) {
-        reverse(arrayInt);
     }
 }

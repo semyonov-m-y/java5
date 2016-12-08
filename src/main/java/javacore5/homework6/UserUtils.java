@@ -62,7 +62,7 @@ public class UserUtils extends User {
     public static final User[] paySalaryToUsers(User[] users) {
         for (int k = 0; k < users.length; k++) {
             if (users[k].getSalary() > 0) {
-                int userCurrentBalance = users[k].setBalance(users[k].getBalance());
+                users[k].setBalance(users[k].getBalance() + users[k].getSalary());
             }
         }
 

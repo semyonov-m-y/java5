@@ -29,7 +29,10 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
         System.out.print("Money transfer: ");
-        if (amount > fromUser.getBank().getLimitOfWithdrawal()) {
+        if (amount > toUser.getBank().getLimitOfFunding()) {
+            System.out.println("You exceeded the limit of money adding!");
+            return;
+        } else if (amount > fromUser.getBank().getLimitOfWithdrawal()) {
             System.out.println("You exceeded the limit of cash withdrawal!");
             return;
         } else {
@@ -37,12 +40,7 @@ public class BankSystemImpl implements BankSystem {
                     .getCommission(amount)) / 100);
         }
 
-        if (amount > toUser.getBank().getLimitOfFunding()) {
-            System.out.println("You exceeded the limit of money adding!");
-            return;
-        } else {
             toUser.setBalance(toUser.getBalance() + amount);
-        }
 
         System.out.println("Your balance:" + fromUser.getBalance());
     }

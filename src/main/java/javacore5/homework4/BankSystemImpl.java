@@ -40,7 +40,7 @@ public class BankSystemImpl implements BankSystem {
                     .getCommission(amount)) / 100);
         }
 
-            toUser.setBalance(toUser.getBalance() + amount);
+        toUser.setBalance(toUser.getBalance() + amount);
 
         System.out.println("Your balance:" + fromUser.getBalance());
     }

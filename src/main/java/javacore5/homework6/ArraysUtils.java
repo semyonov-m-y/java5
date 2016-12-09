@@ -10,8 +10,6 @@ public final class ArraysUtils {
     private static int MAX = Integer.MIN_VALUE;
     private static int SECONDLARGEST = Integer.MIN_VALUE;
 
-    private static int[] arrayInt = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
     public static int intSum(int[] arrayInt) {
         int sum = 0;
 

@@ -251,6 +251,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 
@@ -266,6 +267,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 
@@ -281,6 +283,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 
@@ -296,6 +299,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 
@@ -311,6 +315,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 
@@ -326,6 +331,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 
@@ -341,6 +347,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 
@@ -356,6 +363,7 @@ public class Main {
 
         Date date1 = new Date();
         long msDelay = date1.getTime() - date.getTime();
+
         return msDelay;
     }
 }

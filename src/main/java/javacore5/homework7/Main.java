@@ -4,8 +4,6 @@ import java.util.*;
 
 public class Main {
 
-    public static int MAX = Integer.MIN_VALUE;
-
     public static void main(String[] args) {
         User user1 = new User(1, "Max", "Semenov", "Moscow", 100000);
         User user3 = new User(3, "Ruslan", "Baybekov", "Lobnya", 80000);
@@ -40,50 +38,25 @@ public class Main {
         list.add(order8);
         list.add(order10);
 
-        Collections.sort(list, new PriceComparator());
-
-        Collections.sort(list, new PriceCityComparator());
-
-        Collections.sort(list, new ItemNameShopIdentificatorCityComparator());
-
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).equals(list.get(j))) {
-                    list.remove(j);
-                }
-            }
-        }
-
-        for (int m = 0; m < list.size(); m++) {
-            if (list.get(m).getPrice() < 1500) {
-                list.remove(m);
-            }
-        }
+        System.out.println(ListOfOrders.listPriceSort(list));
+        System.out.println("");
+        System.out.println(ListOfOrders.listPriceCitySort(list));
+        System.out.println("");
+        System.out.println(ListOfOrders.itemNameShopIdentificatorCitySort(list));
+        System.out.println("");
+        System.out.println(ListOfOrders.deleteEqual(list));
+        System.out.println("");
+        System.out.println(ListOfOrders.deleteLessThan1500(list));
+        System.out.println("");
 
         ArrayList<Order> list2 = new ArrayList<>();
         ArrayList<Order> list3 = new ArrayList<>();
 
-        for (int m = 0; m < list.size(); m++) {
-            if (list.get(m).getCurrency() == Currency.USD) {
-                list2.add(list.get(m));
-            } else if (list.get(m).getCurrency() == Currency.UAH) {
-                list3.add(list.get(m));
-            }
-        }
+        ListOfOrders.divideOnTwo(list, list2, list3);
+        System.out.println("");
 
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).getUser().getCity().equals(list.get(j).getUser().getCity())) {
-                    list.remove(j);
-                }
-            }
-        }
-
-        ArrayList<List> list4 = new ArrayList<>();
-
-        for (int l = 0; l < list.size(); l++) {
-            list4.add(new ArrayList<>());
-        }
+        System.out.println(ListOfOrders.divideWithUniqueCity(list));
+        System.out.println("");
 
         User user11 = new User(1, "Max", "Semenov", "Moscow", 100000);
         User user13 = new User(3, "Ruslan", "Baybekov", "Lobnya", 80000);
@@ -118,253 +91,94 @@ public class Main {
         set.add(order19);
         set.add(order20);
 
-        int setCount = 0;
-        Iterator<Order> iterator = set.iterator();
+        System.out.println(SetOperations.countPetrov(set));
+        System.out.println("");
+        System.out.println(SetOperations.findMaxPrice(set));
+        System.out.println("");
+        System.out.println(SetOperations.deleteUSD(set));
+        System.out.println("");
 
-        while (iterator.hasNext()) {
-            Order ourSet = iterator.next();
-            if (ourSet.getUser().getLastName().equals("Petrov")) {
-                setCount++;
-            }
+        Controller controller = new Controller();
+
+        controller.requestRooms(1000, 1, "Landmark", "New York");
+        controller.requestRooms(2000, 2, "Arlington", "Jackson");
+
+        for (Room oneRoom : controller.requestRooms(1000, 1, "Landmark", "New York")) {
+            System.out.println(oneRoom.getId());
         }
 
-        Iterator<Order> iterator1 = set.iterator();
+        API api1 = new BookingComAPI();
+        API api2 = new GoogleAPI();
 
-        while (iterator1.hasNext()) {
-            Order ourSet1 = iterator1.next();
-            if (ourSet1.getPrice() > MAX) {
-                MAX = ourSet1.getPrice();
-            }
-        }
+        controller.check(api1, api2);
 
-        Iterator<Order> iterator2 = set.iterator();
+        Room room1 = new Room(3, 5000, 1, new Date(), "hotel", "city");
+        DAO dao = new DAOImpl();
 
-        while (iterator2.hasNext()) {
-            Order ourSet1 = iterator2.next();
-            if (ourSet1.getCurrency().equals(Currency.USD)) {
-                iterator2.remove();
-            }
-        }
+        dao.save(room1);
+        dao.delete(room1);
+        System.out.println("");
 
         // ArrayList10000
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
-        insert10000(arrayList);
-        get10000(arrayList);
-        set10000(arrayList);
-        remove10000(arrayList);
+        ListOperations.insertInt10000Times(arrayList);
+        ListOperations.getInt10000Times(arrayList);
+        ListOperations.setInt10000Times(arrayList);
+        ListOperations.removeInt10000Times(arrayList);
 
         // LinkedList10000
         LinkedList<Integer> linkedList = new LinkedList<Integer>();
-        insert10000(linkedList);
-        get10000(linkedList);
-        set10000(linkedList);
-        remove10000(linkedList);
+        ListOperations.insertInt10000Times(linkedList);
+        ListOperations.getInt10000Times(linkedList);
+        ListOperations.setInt10000Times(linkedList);
+        ListOperations.removeInt10000Times(linkedList);
 
         // ArrayList1000
         ArrayList<String> arrayList1 = new ArrayList<String>();
-        insert1000(arrayList1);
-        get1000(arrayList1);
-        set1000(arrayList1);
-        remove1000(arrayList1);
+        ListOperations.insertString1000Times(arrayList1);
+        ListOperations.getString1000Times(arrayList1);
+        ListOperations.setString1000Times(arrayList1);
+        ListOperations.removeString1000Times(arrayList1);
 
         // LinkedList1000
         LinkedList<String> linkedList1 = new LinkedList<String>();
-        insert1000(linkedList1);
-        get1000(linkedList1);
-        set1000(linkedList1);
-        remove1000(linkedList1);
-    }
+        ListOperations.insertString1000Times(linkedList1);
+        ListOperations.getString1000Times(linkedList1);
+        ListOperations.setString1000Times(linkedList1);
+        ListOperations.removeString1000Times(linkedList1);
 
-    public static List insert10000(List list) {
-        for (int i = 0; i < 10000; i++) {
-            list.add(i);
-        }
-
-        return list;
-    }
-
-    public static List get10000(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i);
-        }
-
-        return list;
-    }
-
-    public static List set10000(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.set(i, "m");
-        }
-
-        return list;
-    }
-
-    public static List remove10000(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.removeAll(list);
-        }
-
-        return list;
-    }
-
-    public static List insert1000(List list) {
-        for (int i = 0; i < 1000; i++) {
-            list.add("k");
-        }
-
-        return list;
-    }
-
-    public static List get1000(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i);
-        }
-
-        return list;
-    }
-
-    public static List set1000(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.set(i, "m");
-        }
-
-        return list;
-    }
-
-    public static List remove1000(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.removeAll(list);
-        }
-
-        return list;
-    }
-
-    public static long getTimeMsOfInsert10000(List list) {
-        Date date = new Date();
-
-        insert10000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
-    }
-
-    public static long getTimeMsOfInsert1000(List list) {
-        Date date = new Date();
-
-        insert1000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
-    }
-
-    public static long getTimeMsOfGet10000(List list) {
-        Date date = new Date();
-
-        get10000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
-    }
-
-    public static long getTimeMsOfGet1000(List list) {
-        Date date = new Date();
-
-        get1000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
-    }
-
-    public static long getTimeMsOfSet10000(List list) {
-        Date date = new Date();
-
-        set10000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
-    }
-
-    public static long getTimeMsOfSet1000(List list) {
-        Date date = new Date();
-
-        set1000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
-    }
-
-    public static long getTimeMsOfRemove10000(List list) {
-        Date date = new Date();
-
-        remove10000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
-    }
-
-    public static long getTimeMsOfRemove1000(List list) {
-        Date date = new Date();
-
-        remove1000(list);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Date date1 = new Date();
-        long msDelay = date1.getTime() - date.getTime();
-
-        return msDelay;
+        System.out.println(ListOperations.getTimeNsOfInsert10000(ListOperations
+                .insertInt10000Times(new ArrayList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfInsert10000(ListOperations
+                .insertInt10000Times(new LinkedList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfInsert1000(ListOperations
+                .insertString1000Times(new ArrayList<String>())));
+        System.out.println(ListOperations.getTimeNsOfInsert1000(ListOperations
+                .insertString1000Times(new LinkedList<String>())));
+        System.out.println(ListOperations.getTimeNsOfGet10000(ListOperations
+                .getInt10000Times(new ArrayList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfGet10000(ListOperations
+                .getInt10000Times(new LinkedList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfGet1000(ListOperations
+                .getString1000Times(new ArrayList<String>())));
+        System.out.println(ListOperations.getTimeNsOfGet1000(ListOperations
+                .getString1000Times(new LinkedList<String>())));
+        System.out.println(ListOperations.getTimeNsOfSet10000(ListOperations
+                .setInt10000Times(new ArrayList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfSet10000(ListOperations
+                .setInt10000Times(new LinkedList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfSet1000(ListOperations
+                .setString1000Times(new ArrayList<String>())));
+        System.out.println(ListOperations.getTimeNsOfSet1000(ListOperations
+                .setString1000Times(new LinkedList<String>())));
+        System.out.println(ListOperations.getTimeNsOfRemove10000(ListOperations
+                .removeInt10000Times(new ArrayList())));
+        System.out.println(ListOperations.getTimeNsOfRemove10000(ListOperations
+                .removeInt10000Times(new LinkedList())));
+        System.out.println(ListOperations.getTimeNsOfRemove1000(ListOperations
+                .removeString1000Times(new ArrayList())));
+        System.out.println(ListOperations.getTimeNsOfRemove1000(ListOperations
+                .removeString1000Times(new LinkedList())));
     }
 }
 

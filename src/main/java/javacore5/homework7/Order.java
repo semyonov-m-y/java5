@@ -28,9 +28,8 @@ public class Order implements Comparable {
                 + ", user=" + user + "]";
     }
 
-    @Override
-    public int compareTo(Object obj) {
-        return 1;
+    public int compareTo(Order order1, Order order2) {
+        return order2.getPrice() - order1.getPrice();
     }
 
     @Override
@@ -38,11 +37,9 @@ public class Order implements Comparable {
         if (this == obj) {
             return true;
         }
-
         if (obj == null) {
             return false;
         }
-
         if (getClass() != obj.getClass()) {
             return false;
         }
@@ -52,27 +49,23 @@ public class Order implements Comparable {
         if (price != other.price) {
             return false;
         }
-
         if (currency != other.currency) {
             return false;
         }
-
         if (itemName == null) {
             if (other.itemName != null) {
                 return false;
             }
         } else if (!itemName.equals(other.itemName)) {
-            //do nothing
+            // do nothing
         }
-
         if (shopIdentificator == null) {
             if (other.shopIdentificator != null) {
                 return false;
             }
         } else if (!shopIdentificator.equals(other.shopIdentificator)) {
-            //do nothing
+            // do nothing
         }
-
         if (user != other.user) {
             return false;
         }
@@ -136,5 +129,10 @@ public class Order implements Comparable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public int compareTo(Object arg0) {
+        return 1;
     }
 }

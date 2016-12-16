@@ -1,4 +1,4 @@
-package javacore5.homework7;
+package main.java.homeworks.homework7;
 
 public class Order implements Comparable {
 
@@ -34,7 +34,7 @@ public class Order implements Comparable {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        /*if (this == obj) {
             return true;
         }
         if (obj == null) {
@@ -65,6 +65,37 @@ public class Order implements Comparable {
             }
         } else if (!shopIdentificator.equals(other.shopIdentificator)) {
             // do nothing
+        }
+        if (user != other.user) {
+            return false;
+        }
+        return true;*/
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Order other = (Order) obj;
+
+        if (id != other.id) {
+            return false;
+        }
+        if (price != other.price) {
+            return false;
+        }
+        if (currency != other.currency) {
+            return false;
+        }
+        if (itemName != other.itemName) {
+            return false;
+        }
+        if (shopIdentificator != other.shopIdentificator) {
+            return false;
         }
         if (user != other.user) {
             return false;

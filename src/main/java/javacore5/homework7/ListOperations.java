@@ -1,19 +1,92 @@
-package javacore5.homework7;
+package main.java.homeworks.homework7;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListOperations {
 
-    public static List insertInt10000Times(List list) {
-        for (int i = 0; i < 10000; i++) {
+    private static ArrayList<Integer> arrayList = new ArrayList<Integer>();
+    private static LinkedList<Integer> linkedList = new LinkedList<Integer>();
+    private static ArrayList<String> arrayList1 = new ArrayList<String>();
+    private static LinkedList<String> linkedList1 = new LinkedList<String>();
+
+    public static void main(String[] args) {
+        ListOperations.insertIntManyTimes(arrayList);
+        ListOperations.getIntManyTimes(arrayList);
+        ListOperations.setIntManyTimes(arrayList);
+        ListOperations.removeIntManyTimes(arrayList);
+
+        ListOperations.insertIntManyTimes(linkedList);
+        ListOperations.getIntManyTimes(linkedList);
+        ListOperations.setIntManyTimes(linkedList);
+        ListOperations.removeIntManyTimes(linkedList);
+
+        ListOperations.insertStringManyTimes(arrayList1);
+        ListOperations.getStringManyTimes(arrayList1);
+        ListOperations.setStringManyTimes(arrayList1);
+        ListOperations.removeStringManyTimes(arrayList1);
+
+        ListOperations.insertStringManyTimes(linkedList1);
+        ListOperations.getStringManyTimes(linkedList1);
+        ListOperations.setStringManyTimes(linkedList1);
+        ListOperations.removeStringManyTimes(linkedList1);
+
+        System.out.println(ListOperations.getTimeNsOfInsert(ListOperations
+                .insertIntManyTimes(new ArrayList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfInsert(ListOperations
+                .insertIntManyTimes(new LinkedList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfInsert(ListOperations
+                .insertStringManyTimes(new ArrayList<String>())));
+        System.out.println(ListOperations.getTimeNsOfInsert(ListOperations
+                .insertStringManyTimes(new LinkedList<String>())));
+        System.out.println(ListOperations.getTimeNsOfGet(ListOperations
+                .getIntManyTimes(new ArrayList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfGet(ListOperations
+                .getIntManyTimes(new LinkedList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfGet(ListOperations
+                .getStringManyTimes(new ArrayList<String>())));
+        System.out.println(ListOperations.getTimeNsOfGet(ListOperations
+                .getStringManyTimes(new LinkedList<String>())));
+        System.out.println(ListOperations.getTimeNsOfSet(ListOperations
+                .setIntManyTimes(new ArrayList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfSet(ListOperations
+                .setIntManyTimes(new LinkedList<Integer>())));
+        System.out.println(ListOperations.getTimeNsOfSet(ListOperations
+                .setStringManyTimes(new ArrayList<String>())));
+        System.out.println(ListOperations.getTimeNsOfSet(ListOperations
+                .setStringManyTimes(new LinkedList<String>())));
+        System.out.println(ListOperations.getTimeNsOfRemove(ListOperations
+                .removeIntManyTimes(new ArrayList())));
+        System.out.println(ListOperations.getTimeNsOfRemove(ListOperations
+                .removeIntManyTimes(new LinkedList())));
+        System.out.println(ListOperations.getTimeNsOfRemove(ListOperations
+                .removeStringManyTimes(new ArrayList())));
+        System.out.println(ListOperations.getTimeNsOfRemove(ListOperations
+                .removeStringManyTimes(new LinkedList())));
+    }
+
+    public static int doHowManyTimes(List list) {
+        int timesCounter = 0;
+        if (list.equals(arrayList) || list.equals("linkedList")) {
+            timesCounter = 10000;
+        } else if (list.equals("arrayList1")  || list.equals("linkedList1")) {
+            timesCounter = 1000;
+        }
+
+        return timesCounter;
+    }
+
+    public static List insertIntManyTimes(List list) {
+        for (int i = 0; i < doHowManyTimes(list); i++) {
             list.add(i);
         }
 
         return list;
     }
 
-    public static List getInt10000Times(List list) {
+    public static List getIntManyTimes(List list) {
         for (int i = 0; i < list.size(); i++) {
             list.get(i);
         }
@@ -21,7 +94,7 @@ public class ListOperations {
         return list;
     }
 
-    public static List setInt10000Times(List list) {
+    public static List setIntManyTimes(List list) {
         for (int i = 0; i < list.size(); i++) {
             list.set(i, "m");
         }
@@ -29,7 +102,7 @@ public class ListOperations {
         return list;
     }
 
-    public static List removeInt10000Times(List list) {
+    public static List removeIntManyTimes(List list) {
         for (int i = 0; i < list.size(); i++) {
             list.removeAll(list);
         }
@@ -37,15 +110,15 @@ public class ListOperations {
         return list;
     }
 
-    public static List insertString1000Times(List list) {
-        for (int i = 0; i < 1000; i++) {
+    public static List insertStringManyTimes(List list) {
+        for (int i = 0; i < doHowManyTimes(list); i++) {
             list.add("k");
         }
 
         return list;
     }
 
-    public static List getString1000Times(List list) {
+    public static List getStringManyTimes(List list) {
         for (int i = 0; i < list.size(); i++) {
             list.get(i);
         }
@@ -53,7 +126,7 @@ public class ListOperations {
         return list;
     }
 
-    public static List setString1000Times(List list) {
+    public static List setStringManyTimes(List list) {
         for (int i = 0; i < list.size(); i++) {
             list.set(i, "m");
         }
@@ -61,7 +134,7 @@ public class ListOperations {
         return list;
     }
 
-    public static List removeString1000Times(List list) {
+    public static List removeStringManyTimes(List list) {
         for (int i = 0; i < list.size(); i++) {
             list.removeAll(list);
         }
@@ -69,83 +142,44 @@ public class ListOperations {
         return list;
     }
 
-    public static long getTimeNsOfInsert10000(List list) {
+    public static long getTimeNsOfInsert(List list) {
         Date addStartDate = new Date(System.nanoTime());
 
-        insertInt10000Times(list);
+        insertIntManyTimes(list);
 
         Date addEndtDate = new Date(System.nanoTime());
-        long msDelay = addEndtDate.getTime() - addStartDate.getTime();
-        return msDelay;
+        long nsDelay = addEndtDate.getTime() - addStartDate.getTime();
+        return nsDelay;
     }
 
-    public static long getTimeNsOfInsert1000(List list) {
-        Date addStartDate = new Date(System.nanoTime());
-
-        insertString1000Times(list);
-
-        Date addEndtDate = new Date(System.nanoTime());
-        long msDelay = addEndtDate.getTime() - addStartDate.getTime();
-        return msDelay;
-    }
-
-    public static long getTimeNsOfGet10000(List list) {
+    public static long getTimeNsOfGet(List list) {
         Date getStartDate = new Date(System.nanoTime());
 
-        getInt10000Times(list);
+        getIntManyTimes(list);
 
         Date getEndDate = new Date(System.nanoTime());
-        long msDelay = getEndDate.getTime() - getStartDate.getTime();
-        return msDelay;
+        long nsDelay = getEndDate.getTime() - getStartDate.getTime();
+        return nsDelay;
     }
 
-    public static long getTimeNsOfGet1000(List list) {
-        Date getStartDate = new Date(System.nanoTime());
-
-        getString1000Times(list);
-
-        Date getEndDate = new Date(System.nanoTime());
-        long msDelay = getEndDate.getTime() - getStartDate.getTime();
-        return msDelay;
-    }
-
-    public static long getTimeNsOfSet10000(List list) {
+    public static long getTimeNsOfSet(List list) {
         Date setStartDate = new Date(System.nanoTime());
 
-        setInt10000Times(list);
+        setIntManyTimes(list);
 
         Date setEndDate = new Date(System.nanoTime());
-        long msDelay = setEndDate.getTime() - setStartDate.getTime();
-        return msDelay;
+        long nsDelay = setEndDate.getTime() - setStartDate.getTime();
+        return nsDelay;
     }
 
-    public static long getTimeNsOfSet1000(List list) {
-        Date setStartDate = new Date(System.nanoTime());
-
-        setString1000Times(list);
-
-        Date setEndDate = new Date(System.nanoTime());
-        long msDelay = setEndDate.getTime() - setStartDate.getTime();
-        return msDelay;
-    }
-
-    public static long getTimeNsOfRemove10000(List list) {
+    public static long getTimeNsOfRemove(List list) {
         Date removeStartDate = new Date(System.nanoTime());
 
-        removeInt10000Times(list);
+        removeIntManyTimes(list);
 
         Date removeEndDate = new Date(System.nanoTime());
-        long msDelay = removeEndDate.getTime() - removeStartDate.getTime();
-        return msDelay;
-    }
-
-    public static long getTimeNsOfRemove1000(List list) {
-        Date removeStartDate = new Date(System.nanoTime());
-
-        removeString1000Times(list);
-
-        Date removeEndDate = new Date(System.nanoTime());
-        long msDelay = removeEndDate.getTime() - removeStartDate.getTime();
-        return msDelay;
+        long nsDelay = removeEndDate.getTime() - removeStartDate.getTime();
+        return nsDelay;
     }
 }
+

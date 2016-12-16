@@ -1,4 +1,4 @@
-package javacore5.homework7;
+package main.java.homeworks.homework7;
 
 import java.util.Iterator;
 import java.util.TreeSet;

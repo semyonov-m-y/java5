@@ -1,6 +1,8 @@
-package javacore5.homework7;
+package main.java.homeworks.homework7;
 
 import java.util.*;
+
+import main.java.homeworks.homework7.rooms.RoomsMain;
 
 public class Main {
 
@@ -49,10 +51,10 @@ public class Main {
         System.out.println(ListOfOrders.deleteLessThan1500(list));
         System.out.println("");
 
-        ArrayList<Order> list2 = new ArrayList<>();
-        ArrayList<Order> list3 = new ArrayList<>();
+        /*ArrayList<Order> list2 = new ArrayList<>();
+        ArrayList<Order> list3 = new ArrayList<>();*/
 
-        ListOfOrders.divideOnTwo(list, list2, list3);
+        ListOfOrders.divideOnTwo(list/*, list2, list3*/);
         System.out.println("");
 
         System.out.println(ListOfOrders.divideWithUniqueCity(list));
@@ -98,87 +100,7 @@ public class Main {
         System.out.println(SetOperations.deleteUSD(set));
         System.out.println("");
 
-        Controller controller = new Controller();
-
-        controller.requestRooms(1000, 1, "Landmark", "New York");
-        controller.requestRooms(2000, 2, "Arlington", "Jackson");
-
-        for (Room oneRoom : controller.requestRooms(1000, 1, "Landmark", "New York")) {
-            System.out.println(oneRoom.getId());
-        }
-
-        API api1 = new BookingComAPI();
-        API api2 = new GoogleAPI();
-
-        controller.check(api1, api2);
-
-        Room room1 = new Room(3, 5000, 1, new Date(), "hotel", "city");
-        DAO dao = new DAOImpl();
-
-        dao.save(room1);
-        dao.delete(room1);
-        System.out.println("");
-
-        // ArrayList10000
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
-        ListOperations.insertInt10000Times(arrayList);
-        ListOperations.getInt10000Times(arrayList);
-        ListOperations.setInt10000Times(arrayList);
-        ListOperations.removeInt10000Times(arrayList);
-
-        // LinkedList10000
-        LinkedList<Integer> linkedList = new LinkedList<Integer>();
-        ListOperations.insertInt10000Times(linkedList);
-        ListOperations.getInt10000Times(linkedList);
-        ListOperations.setInt10000Times(linkedList);
-        ListOperations.removeInt10000Times(linkedList);
-
-        // ArrayList1000
-        ArrayList<String> arrayList1 = new ArrayList<String>();
-        ListOperations.insertString1000Times(arrayList1);
-        ListOperations.getString1000Times(arrayList1);
-        ListOperations.setString1000Times(arrayList1);
-        ListOperations.removeString1000Times(arrayList1);
-
-        // LinkedList1000
-        LinkedList<String> linkedList1 = new LinkedList<String>();
-        ListOperations.insertString1000Times(linkedList1);
-        ListOperations.getString1000Times(linkedList1);
-        ListOperations.setString1000Times(linkedList1);
-        ListOperations.removeString1000Times(linkedList1);
-
-        System.out.println(ListOperations.getTimeNsOfInsert10000(ListOperations
-                .insertInt10000Times(new ArrayList<Integer>())));
-        System.out.println(ListOperations.getTimeNsOfInsert10000(ListOperations
-                .insertInt10000Times(new LinkedList<Integer>())));
-        System.out.println(ListOperations.getTimeNsOfInsert1000(ListOperations
-                .insertString1000Times(new ArrayList<String>())));
-        System.out.println(ListOperations.getTimeNsOfInsert1000(ListOperations
-                .insertString1000Times(new LinkedList<String>())));
-        System.out.println(ListOperations.getTimeNsOfGet10000(ListOperations
-                .getInt10000Times(new ArrayList<Integer>())));
-        System.out.println(ListOperations.getTimeNsOfGet10000(ListOperations
-                .getInt10000Times(new LinkedList<Integer>())));
-        System.out.println(ListOperations.getTimeNsOfGet1000(ListOperations
-                .getString1000Times(new ArrayList<String>())));
-        System.out.println(ListOperations.getTimeNsOfGet1000(ListOperations
-                .getString1000Times(new LinkedList<String>())));
-        System.out.println(ListOperations.getTimeNsOfSet10000(ListOperations
-                .setInt10000Times(new ArrayList<Integer>())));
-        System.out.println(ListOperations.getTimeNsOfSet10000(ListOperations
-                .setInt10000Times(new LinkedList<Integer>())));
-        System.out.println(ListOperations.getTimeNsOfSet1000(ListOperations
-                .setString1000Times(new ArrayList<String>())));
-        System.out.println(ListOperations.getTimeNsOfSet1000(ListOperations
-                .setString1000Times(new LinkedList<String>())));
-        System.out.println(ListOperations.getTimeNsOfRemove10000(ListOperations
-                .removeInt10000Times(new ArrayList())));
-        System.out.println(ListOperations.getTimeNsOfRemove10000(ListOperations
-                .removeInt10000Times(new LinkedList())));
-        System.out.println(ListOperations.getTimeNsOfRemove1000(ListOperations
-                .removeString1000Times(new ArrayList())));
-        System.out.println(ListOperations.getTimeNsOfRemove1000(ListOperations
-                .removeString1000Times(new LinkedList())));
+        RoomsMain.saveDeleteRooms();
     }
 }
 

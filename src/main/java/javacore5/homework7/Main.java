@@ -50,13 +50,8 @@ public class Main {
         System.out.println("");
         System.out.println(ListOfOrders.deleteLessThan1500(list));
         System.out.println("");
-
-        /*ArrayList<Order> list2 = new ArrayList<>();
-        ArrayList<Order> list3 = new ArrayList<>();*/
-
-        ListOfOrders.divideOnTwo(list/*, list2, list3*/);
+        System.out.println(ListOfOrders.divideOnTwo(list));
         System.out.println("");
-
         System.out.println(ListOfOrders.divideWithUniqueCity(list));
         System.out.println("");
 
@@ -103,4 +98,3 @@ public class Main {
         RoomsMain.saveDeleteRooms();
     }
 }
-

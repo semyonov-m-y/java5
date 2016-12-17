@@ -7,16 +7,25 @@ public abstract class AbstractAPI implements API {
 
     @Override
     public List<Room> findRooms(int price, int persons, String city, String hotel) {
-        List<Room> roomsFound = new ArrayList<>();
+        int countRooms = 0;
+        for (Room eachRoom : getAll()) {
+            if (eachRoom.getPrice() == price && eachRoom.getPersons() == persons && eachRoom.getCityName().equals(city)
+                    && eachRoom.getHotelName().equals(hotel)) {
+                countRooms++;
+            }
+        }
+
+        List<Room> roomsFound = new ArrayList<>(countRooms);
 
         int index = 0;
-        Room roomsFoundResult = roomsFound.get(index);
         for (Room eachRoom : getAll()) {
+            Room roomsFoundResult = roomsFound.get(index);
             if (eachRoom.getPrice() == price && eachRoom.getPersons() == persons && eachRoom.getCityName().equals(city)
                     && eachRoom.getHotelName().equals(hotel)) {
                 roomsFoundResult = eachRoom;
             }
         }
-        return (List<Room>) roomsFoundResult;
+
+        return roomsFound;
     }
 }

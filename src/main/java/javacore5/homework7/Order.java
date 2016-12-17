@@ -34,42 +34,6 @@ public class Order implements Comparable {
 
     @Override
     public boolean equals(Object obj) {
-        /*if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        Order other = (Order) obj;
-
-        if (price != other.price) {
-            return false;
-        }
-        if (currency != other.currency) {
-            return false;
-        }
-        if (itemName == null) {
-            if (other.itemName != null) {
-                return false;
-            }
-        } else if (!itemName.equals(other.itemName)) {
-            // do nothing
-        }
-        if (shopIdentificator == null) {
-            if (other.shopIdentificator != null) {
-                return false;
-            }
-        } else if (!shopIdentificator.equals(other.shopIdentificator)) {
-            // do nothing
-        }
-        if (user != other.user) {
-            return false;
-        }
-        return true;*/
         if (this == obj) {
             return true;
         }

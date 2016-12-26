@@ -5,36 +5,58 @@ import java.util.List;
 
 public class DAOImpl implements DAO {
 
-    List<Room> dao = new ArrayList<>();
+     private List<Room> dao = new ArrayList<>();
 
     @Override
     public Room save(Room room) {
         dao.add(room);
-        System.out.println("Save operation " + room.getId());
-        return dao.get(0);
+        System.out.println(room.getHotelName() + " was saved in DB");
+
+        return room;
     }
 
     @Override
     public boolean delete(Room room) {
-        Room deleteRoom = dao.get(0);
-        deleteRoom = null;
-        System.out.println("Delete operation " + room.getId());
-        return true;
+        for (int i = 0; i < dao.size(); i++) {
+            if (dao.get(i).equals(room)) {
+                dao.remove(i);
+                System.out.println(room.getHotelName() + " was removed from DB");
+
+                return true;
+            }
+        }
+
+        return false;
     }
 
     @Override
-    public Room update(Room room) {
-        Room updateRoom = dao.get(1);
-        updateRoom = room;
-        updateRoom.setPrice(10000);
-        System.out.println("Update operation " + room.getId());
-        return updateRoom;
+    public void update(Room room) {
+        for (int i = 0; i < dao.size(); i++) {
+            if (dao.get(i).getId() == room.getId()) {
+                dao.set(i, room);
+                System.out.println(room.getHotelName() + " updated");
+                break;
+            }
+        }
     }
 
     @Override
     public Room findByID(long id) {
-        Room findRoom = dao.get(1);
-        System.out.println("We found room " + id);
-        return findRoom;
+        for (int i = 0; i < dao.size(); i++) {
+            if (dao.get(i).getId() == id) {
+                System.out.println("Searching result: " + dao.get(i).getHotelName());
+
+                return dao.get(i);
+            }
+        }
+        System.out.println("The search has not given any result");
+
+        return null;
+    }
+
+    @Override
+    public List<Room> getAll() {
+
+        return dao;
     }
 }

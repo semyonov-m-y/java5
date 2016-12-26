@@ -6,8 +6,9 @@ public interface DAO {
 
     boolean delete(Room room);
 
-    Room update(Room room);
+    void update(Room room);
 
     Room findByID(long id);
 
+    List<Room> getAll();
 }

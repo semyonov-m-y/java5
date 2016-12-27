@@ -4,13 +4,13 @@ import java.util.List;
 
 public interface AbstractDAO<T> {
 
-    T save(T t);
+    T save(T element);
 
-    void delete(T t);
+    void delete(T element);
 
-    void deleteAll(List<T> T);
+    void deleteAll(List<T> element);
 
-    void saveAll(List<T> T);
+    void saveAll(List<T> element);
 
     List<T> getList();
 

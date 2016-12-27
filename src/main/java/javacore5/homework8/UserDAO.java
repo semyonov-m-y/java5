@@ -52,7 +52,7 @@ public class UserDAO extends AbstractDAOImpl<User> {
     @Override
     public User get(long id) {
         for (User user : base) {
-            if (user.getId()==id) {
+            if (user.getId() == id) {
                 return user;
             }
         }

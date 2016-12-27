@@ -8,15 +8,15 @@ public abstract class AbstractDAOImpl<T> implements AbstractDAO<T> {
     List<T> base = new ArrayList<>();
 
     @Override
-    public T save(T aSave) {
+    public T save(T saved) {
         for (int i = 0; i < 10; i++) {
-            base.add(aSave);
+            base.add(saved);
         }
         return null;
     }
 
     @Override
-    public void delete(T aSave) {
+    public void delete(T saved) {
         base.remove(0);
     }
 

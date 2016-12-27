@@ -1,7 +1,8 @@
 package javacore5.homework7;
 
-import java.util.*;
-
+import javacore5.homework7.rooms.RoomsMain;
+import java.util.ArrayList;
+import java.util.TreeSet;
 import javacore5.homework7.rooms.RoomsMain;
 
 public class Main {

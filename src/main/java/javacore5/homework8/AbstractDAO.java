@@ -17,8 +17,4 @@ public interface AbstractDAO<T> {
     void deleteById(long id);
 
     T get(long id);
-
-    void delete(User user);
-
-    User save(User user);
 }

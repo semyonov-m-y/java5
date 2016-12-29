@@ -7,17 +7,30 @@ public class Main {
 
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
-        User test = new User(1, "Max");
-        List<User> user = new ArrayList<>();
-        long id = 0;
-        user.add(new User(2, "Alex"));
+        User test = new User(4L, "Max");
+        List<User> users = new ArrayList<>();
+        long id = 1;
+
+        users.add(new User(5L, "Alex"));
+        users.add(new User(6L, "Ivan"));
+        System.out.println("Users " + users);
 
         userDAO.save(test);
-        userDAO.delete(test);
-        userDAO.deleteAll(user);
-        userDAO.saveAll(user);
-        userDAO.getList();
+        System.out.println("Without users list " + userDAO.getBase());
+
+        userDAO.saveAll(users);
+        System.out.println("Save users list " + userDAO.getBase());
+
+        userDAO.getById(id);
+        System.out.println("Element with id " + id + " was obtained from DB: " + userDAO.getById(id));
+
         userDAO.deleteById(id);
-        userDAO.get(id);
+        System.out.println("Element with id " + id + " was removed from DB");
+
+        userDAO.delete(test);
+        System.out.println("DataBase without test " + userDAO.getBase());
+
+        userDAO.deleteAll(users);
+        System.out.println("Delete users list " + userDAO.getBase());
     }
 }

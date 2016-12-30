@@ -1,6 +1,7 @@
 package javacore5.homework8;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AbstractDAO<T> {
 
@@ -16,5 +17,5 @@ public interface AbstractDAO<T> {
 
     void deleteById(long id);
 
-    T getById(long id);
+    Optional<User> getById(long id);
 }

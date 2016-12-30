@@ -1,35 +1,26 @@
 package javacore5.homework8;
 
-import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
 
 public class UserDAO extends AbstractDAOImpl<User> {
 
-    public UserDAO() {
-        save(new User(1L, "Slava"));
-        save(new User(2L, "Lesha"));
-        save(new User(3L, "Vasya"));
-    }
-
     @Override
-    public User getById(long id) {
-        for (User user : base) {
-            if (user.getId() == id) {
-                return user;
-            }
-        }
-
-        return null;
+    public Optional<User> getById(long id) {
+        Optional<User> user = base.stream().filter(p -> p.getId() == id).findAny();
+        return user;
     }
 
     @Override
     public void deleteById(long id) {
-        Iterator<User> iterator = base.iterator();
+        base.removeIf(ourList -> ourList.getId() == id);
+    }
 
-        while (iterator.hasNext()) {
-            User item = iterator.next();
-            if (item.getId() == id) {
-                iterator.remove();
-            }
-        }
+    public List<User> getBase() {
+        return base;
+    }
+
+    public void setBase(List<User> base) {
+        this.base = base;
     }
 }

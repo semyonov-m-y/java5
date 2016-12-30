@@ -7,10 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
-        User test = new User(4L, "Max");
+        User test = new User(1L, "Max");
         List<User> users = new ArrayList<>();
-        long id = 1;
+        long id = 2;
 
+        users.add(new User(2L, "Slava"));
+        users.add(new User(3L, "Lesha"));
+        users.add(new User(4L, "Vasya"));
         users.add(new User(5L, "Alex"));
         users.add(new User(6L, "Ivan"));
         System.out.println("Users " + users);
@@ -22,15 +25,15 @@ public class Main {
         System.out.println("Save users list " + userDAO.getBase());
 
         userDAO.getById(id);
-        System.out.println("Element with id " + id + " was obtained from DB: " + userDAO.getById(id));
+        System.out.println("Element with id " + id + " was obtained from DB " + userDAO.getById(id).toString());
 
         userDAO.deleteById(id);
-        System.out.println("Element with id " + id + " was removed from DB");
-
-        userDAO.delete(test);
-        System.out.println("DataBase without test " + userDAO.getBase());
+        System.out.println("Element with id " + id + " was removed from DB ");
 
         userDAO.deleteAll(users);
         System.out.println("Delete users list " + userDAO.getBase());
+
+        userDAO.delete(test);
+        System.out.println("DataBase without test " + userDAO.getBase());
     }
 }

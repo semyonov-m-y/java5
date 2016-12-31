@@ -12,7 +12,7 @@ public class SetOperations {
     }
 
     public static TreeSet<Order> deleteUSD(TreeSet<Order> set) {
-        set.removeIf(ourList -> ourList.getCurrency().equals(Currency.USD));
+        set.removeIf(p -> p.getCurrency().equals(Currency.USD));
 
         return set;
     }

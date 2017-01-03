@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class AbstractDAOImpl<T> implements AbstractDAO<T> {
 
-    protected List<T> base = new ArrayList<>();
+    private List<T> base = new ArrayList<>();
 
     @Override
     public T save(T element) {

@@ -19,10 +19,10 @@ public class Main {
         System.out.println("Users " + users);
 
         userDAO.save(test);
-        System.out.println("Without users list " + userDAO.getBase());
+        System.out.println("Without users list " + userDAO.getList());
 
         userDAO.saveAll(users);
-        System.out.println("Save users list " + userDAO.getBase());
+        System.out.println("Save users list " + userDAO.getList());
 
         userDAO.getById(id);
         System.out.println("Element with id " + id + " was obtained from DB " + userDAO.getById(id).toString());
@@ -31,9 +31,9 @@ public class Main {
         System.out.println("Element with id " + id + " was removed from DB ");
 
         userDAO.deleteAll(users);
-        System.out.println("Delete users list " + userDAO.getBase());
+        System.out.println("Delete users list " + userDAO.getList());
 
         userDAO.delete(test);
-        System.out.println("DataBase without test " + userDAO.getBase());
+        System.out.println("DataBase without test " + userDAO.getList());
     }
 }

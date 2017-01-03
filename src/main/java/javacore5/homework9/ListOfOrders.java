@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class ListOfOrders {
 
     public static List<Order> listPriceSort(List<Order> list) {
-        list.sort((o1, o2) -> o2.getPrice() - o1.getPrice());
+        list.sort((order1, order2) -> order2.getPrice() - order1.getPrice());
         return list;
     }
 
@@ -25,24 +25,19 @@ public class ListOfOrders {
     }
 
     public static List<Order> deleteEqual(List<Order> list) {
-        list = list.stream().distinct().collect(Collectors.toList());
-        return list;
+        return list.stream().distinct().collect(Collectors.toList());
     }
 
-    public static List deleteLessThan1500(List<Order> list) {
+    public static List<Order> deleteLessThan1500(List<Order> list) {
         list.removeIf(order -> order.getPrice() < 1500);
         return list;
     }
 
     public static Map<Currency, List<Order>> divideOnTwo(List<Order> list) {
-        Map<Currency, List<Order>> ordersByCurrency = list.stream()
-                .collect(Collectors.groupingBy((order) -> (order.getCurrency())));
-        return ordersByCurrency;
+        return list.stream().collect(Collectors.groupingBy((order) -> (order.getCurrency())));
     }
 
     public static Map<String, List<Order>> divideWithUniqueCity(List<Order> list) {
-        Map<String, List<Order>> ordersByCity = list.stream()
-                .collect(Collectors.groupingBy((order) -> (order.getUser().getCity())));
-        return ordersByCity;
+        return list.stream().collect(Collectors.groupingBy((order) -> (order.getUser().getCity())));
     }
 }

@@ -7,13 +7,11 @@ import java.util.stream.Collectors;
 public class SetOperations {
 
     public static List<Order> countPetrov(TreeSet<Order> set) {
-        List<Order> user = set.stream().filter(p -> p.getUser().getLastName().contains("Petrov")).collect(Collectors.toList());
-        return user;
+        return set.stream().filter(order -> order.getUser().getLastName().contains("Petrov")).collect(Collectors.toList());
     }
 
     public static TreeSet<Order> deleteUSD(TreeSet<Order> set) {
-        set.removeIf(p -> p.getCurrency().equals(Currency.USD));
-
+        set.removeIf(user -> user.getCurrency().equals(Currency.USD));
         return set;
     }
 }

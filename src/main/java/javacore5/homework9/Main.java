@@ -43,7 +43,7 @@ public class Main {
         System.out.println("");
         System.out.println(ListOfOrders.listPriceCitySort(list));
         System.out.println("");
-        System.out.println(ListOfOrders.itemNameShopIdentificatorCitySort(list));
+        System.out.println(ListOfOrders.listItemNameShopIdentificatorCitySort(list));
         System.out.println("");
         System.out.println(ListOfOrders.deleteEqual(list));
         System.out.println("");

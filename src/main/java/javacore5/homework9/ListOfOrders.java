@@ -1,6 +1,5 @@
 package javacore5.homework9;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -8,20 +7,20 @@ import java.util.stream.Collectors;
 public class ListOfOrders {
 
     public static List<Order> listPriceSort(List<Order> list) {
-        list.sort((order1, order2) -> order2.getPrice() - order1.getPrice());
-        return list;
+        return list.stream().sorted((o1, o2) -> o2.getPrice() - o1.getPrice()).collect(Collectors.toList());
     }
 
     public static List<Order> listPriceCitySort(List<Order> list) {
-        list.sort(Comparator.comparing(Order::getPrice).thenComparing((order1, order2) -> order1
-                .getUser().getCity().compareTo(order2.getUser().getCity())));
-        return list;
+        return list.stream().sorted((o1, o2) -> o1.getPrice() != o2.getPrice() ? o1.getPrice() - o2.getPrice()
+                : o1.getUser().getCity().compareTo(o2.getUser().getCity())).collect(Collectors.toList());
     }
 
-    public static List<Order> itemNameShopIdentificatorCitySort(List<Order> list) {
-        list.sort(Comparator.comparing(Order::getItemName).thenComparing(Order::getShopIdentificator)
-                .thenComparing((order1, order2) -> order1.getUser().getCity().compareTo(order2.getUser().getCity())));
-        return list;
+    public static List<Order> listItemNameShopIdentificatorCitySort(List<Order> list) {
+        return list.stream().sorted((o1, o2) -> o1.getItemName() != o2.getItemName()
+                ? o1.getItemName().compareTo(o2.getItemName())
+                : ((o1.getShopIdentificator() != o2.getShopIdentificator())
+                ? o1.getShopIdentificator().compareTo(o2.getShopIdentificator())
+                : o1.getUser().getCity().compareTo(o2.getUser().getCity()))).collect(Collectors.toList());
     }
 
     public static List<Order> deleteEqual(List<Order> list) {
@@ -29,8 +28,7 @@ public class ListOfOrders {
     }
 
     public static List<Order> deleteLessThan1500(List<Order> list) {
-        list.removeIf(order -> order.getPrice() < 1500);
-        return list;
+        return list.stream().filter(order -> order.getPrice() >= 1500).collect(Collectors.toList());
     }
 
     public static Map<Currency, List<Order>> divideOnTwo(List<Order> list) {

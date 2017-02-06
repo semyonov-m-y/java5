@@ -6,13 +6,19 @@ import java.util.HashMap;
 
 public class MainClass {
 
-    static File file = new File("C:\\Users\\Максим\\IdeaProjects\\GoIt2\\GoIt\\java5\\src\\main\\java\\javacore5\\homework11\\task.txt");
+    public static File TEXT_FILE = new File("src\\main\\java\\javacore5\\homework11\\task.txt");
+    private static String restoreString = "Tool to help programmers write code that adheres to coding standards. " +
+            "Detects a variety of other coding problems.";
+
     public static void main(String[] args) throws IOException {
         HashMap<String, String> map = new HashMap<>();
-        System.out.println(ReplacerClass.replacer(map));
-        ReplacerClass.fileContentReplacer(map);
-        ReplacerClass.fileContentMerger(map);
-        System.out.println(CheckClass.checkWord1("Max"));
-        System.out.println(CheckClass.checkWord2("Max2Max3"));
+        map.put("coding", "coveralls");
+
+        System.out.println("Replacer method: " + ReplacerClass.replacer(map));
+        PrintClass.printFile(ReplacerClass.fileContentReplacer(map));
+        PrintClass.printFile(ReplacerClass.fileContentMerger(map));
+        System.out.println("Try: checkWors - " + CheckClass.checkWord1("coveralls"));
+        System.out.println("Try-with-resources: checkWords - " + CheckClass.checkWord2("coveralls"));
+        RestoreClass.restoreFile(restoreString);
     }
 }

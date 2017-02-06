@@ -1,1 +1,1 @@
-Max2Max3
+Tool to help programmers write code that adheres to coding standards. Detects a variety of other coding problems.

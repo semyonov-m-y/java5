@@ -1,13 +1,10 @@
 package javacore5.homework11;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,14 +12,27 @@ public class CheckClass {
 
     public static int checkWord1(String word) throws IOException {
         int wordsCounter1 = 0;
-        List<String> lines = Files.readAllLines(Paths.get("src\\main\\java\\javacore5\\homework11\\task.txt"),
-                StandardCharsets.UTF_8);
+        ArrayList<String> list = new ArrayList();
 
-        for (String line : lines) {
-            line.split(word);
-            if (line.split(word) != null) {
-                wordsCounter1++;
+        try {
+            Scanner scanner = new Scanner(new File("src\\main\\java\\javacore5\\homework11\\task.txt"));
+
+            while (scanner.hasNext()) {
+                list.add(scanner.nextLine());
             }
+        } catch (FileNotFoundException ex) {
+            ex.getMessage();
+        }
+
+        Pattern pattern = Pattern.compile(word);
+        Matcher matcher = null;
+
+        for (int i = 0; i < list.size(); i++) {
+            matcher = pattern.matcher(list.get(i));
+        }
+
+        while (matcher.find()) {
+            wordsCounter1++;
         }
 
         return wordsCounter1;
@@ -30,28 +40,26 @@ public class CheckClass {
 
     public static int checkWord2(String word) throws IOException {
         int wordsCounter2 = 0;
-    	/*ArrayList<String> list = new ArrayList<>();
-    	Scanner file = new Scanner(new File("src\\main\\java\\javacore5\\homework11\\task.txt"));
-    	while (file.hasNext()) {
-    		list.add(file.nextLine());
-    	}
+        ArrayList<String> list = new ArrayList();
 
-    	for (int i = 0; i < list.size(); i++) {
-    		if (word.equals(list.get(i))) {
-    			System.out.println(list.get(i));
-    			wordsCounter2++;
-    		}
-    	}
-
-    	for (String line : list) {
-        	line.split(word);
-            if (line.toString().contains(word)) {
-                wordsCounter2++;
+        try (Scanner scanner = new Scanner(new File("src\\main\\java\\javacore5\\homework11\\task.txt"))) {
+            while (scanner.hasNext()) {
+                list.add(scanner.nextLine());
             }
-        }*/
-        Pattern p = Pattern.compile(word, Pattern.UNICODE_CASE| Pattern.CASE_INSENSITIVE);
-        Matcher m = p.matcher(word);
-        while (m.find()) wordsCounter2++;
+        } catch (FileNotFoundException ex) {
+            ex.getMessage();
+        }
+
+        Pattern pattern = Pattern.compile(word);
+        Matcher matcher = null;
+
+        for (int i = 0; i < list.size(); i++) {
+            matcher = pattern.matcher(list.get(i));
+        }
+
+        while (matcher.find()) {
+            wordsCounter2++;
+        }
 
         return wordsCounter2;
     }

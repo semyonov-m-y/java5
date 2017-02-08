@@ -10,17 +10,17 @@ public class RestoreClass {
 
     public static File restoreFile(String string) throws IOException {
         try {
-            writer = new FileWriter(MainClass.TEXT_FILE);
+            writer = new FileWriter(MainClass.TEXTFILE);
             writer.write(string);
             writer.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         } finally {
             if (writer != null) {
                 writer.close();
             }
         }
 
-        return MainClass.TEXT_FILE;
+        return MainClass.TEXTFILE;
     }
 }

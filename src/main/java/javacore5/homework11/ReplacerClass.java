@@ -11,32 +11,38 @@ import java.util.Map;
 public class ReplacerClass {
 
     public static String replacer(Map<String, String> map) throws IOException {
-								List<String> lines = Files.readAllLines(Paths.get("src\\main\\java\\javacore5\\homework11\\task.txt"),
-																StandardCharsets.UTF_8);
+        List<String> lines = Files.readAllLines(Paths.get("src\\main\\java\\javacore5\\homework11\\task.txt"),
+                StandardCharsets.UTF_8);
 
-								String stringFromFile = "";
-								for(String line : lines) {
-												stringFromFile = line.concat(stringFromFile);
-								}
+        String stringFromFile = "";
+        for (String line : lines) {
+            stringFromFile = line.concat(stringFromFile);
+        }
 
-								String replacedString = "";
-								for(Map.Entry<String, String> pair : map.entrySet()){
-												replacedString = stringFromFile.replaceAll(pair.getKey(), pair.getValue());
-								}
+        String replacedString = "";
+        for (Map.Entry<String, String> pair : map.entrySet()) {
+            replacedString = stringFromFile.replaceAll(pair.getKey(), pair.getValue());
+        }
 
-								return replacedString;
+        return replacedString;
     }
 
     public static File fileContentReplacer(Map<String, String> map) throws IOException {
         WriterClass.rewriteFile(replacer(map));
 
-        return MainClass.TEXT_FILE;
+        return MainClass.TEXTFILE;
     }
 
     public static File fileContentMerger(Map<String, String> map) throws IOException {
-        WriterClass.appendStringToFile(replacer(map));
+        List<String> lines = Files.readAllLines(Paths.get("src\\main\\java\\javacore5\\homework11\\task.txt"),
+                StandardCharsets.UTF_8);
 
-        return MainClass.TEXT_FILE;
+        String stringFromFile = "";
+        for (String line : lines) {
+            stringFromFile = line.concat(stringFromFile);
+        }
+        WriterClass.appendStringToFile(stringFromFile, replacer(map));
+
+        return MainClass.TEXTFILE;
     }
-
 }

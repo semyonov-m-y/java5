@@ -10,35 +10,35 @@ public class WriterClass {
 
     public static File rewriteFile(String string) throws IOException {
         try {
-            writer = new FileWriter(MainClass.TEXT_FILE);
+            writer = new FileWriter(MainClass.TEXTFILE);
             writer.write(string);
             writer.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         } finally {
             if (writer != null) {
                 writer.close();
             }
         }
 
-        return MainClass.TEXT_FILE;
+        return MainClass.TEXTFILE;
     }
 
-    public static File appendStringToFile(String string) throws IOException {
-        String appendedString = " COOL!";
+    public static File appendStringToFile(String appendedString, String string) throws IOException {
         try {
-            writer = new FileWriter(MainClass.TEXT_FILE);
-            writer.append(string);
+            writer = new FileWriter(MainClass.TEXTFILE);
             writer.append(appendedString);
+            writer.append(string);
             writer.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         } finally {
             if (writer != null) {
                 writer.close();
             }
         }
 
-        return MainClass.TEXT_FILE;
+        return MainClass.TEXTFILE;
     }
 }
+

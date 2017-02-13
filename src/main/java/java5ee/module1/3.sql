@@ -1,0 +1,1 @@
+SELECT SUM(salary) FROM sqldatabase.developers;

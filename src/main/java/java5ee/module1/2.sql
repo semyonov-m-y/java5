@@ -1,1 +1,3 @@
-SELECT  project, MAX(SUM(salary)) FROM sqldatabase.developers LEFT JOIN sqldatabase.projects ON developers.id = projects.developer_id GROUP BY project;
+SELECT SUM(salary), projects.project FROM developers 
+LEFT JOIN projects ON developers.id = projects.developer_id
+GROUP BY project ORDER BY SUM(salary) DESC LIMIT 1;

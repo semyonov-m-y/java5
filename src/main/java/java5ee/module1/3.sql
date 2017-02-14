@@ -1,1 +1,1 @@
-SELECT SUM(salary) FROM sqldatabase.developers;
+SELECT SUM(salary) FROM developers;

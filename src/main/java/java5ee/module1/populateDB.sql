@@ -1,3 +1,6 @@
+INSERT INTO companies VALUES (1, 'Luxoft');
+INSERT INTO companies VALUES (2, 'MTS');
+
 INSERT INTO customers VALUES (1, 'Ivan', 'Ivanov', 'ivanov@mail.ru');
 INSERT INTO customers VALUES (2, 'Petr', 'Petrov', 'petrov@gmail.com');
 
@@ -12,24 +15,40 @@ INSERT INTO developers VALUES (8, 'Alex', 'Kotov', 'kot@gmail.com', 3);
 INSERT INTO developers VALUES (9, 'Alena', 'Bal', 'bal@ngs.ru', 2);
 INSERT INTO developers VALUES (10, 'Ruslan', 'Umerkaev', 'um@mal.ru', 1);
 
-INSERT INTO companies VALUES (1, 'Luxoft');
-INSERT INTO companies VALUES (2, 'MTS');
+INSERT INTO developers_skills VALUES (1, 1);
+INSERT INTO developers_skills VALUES (1, 2);
+INSERT INTO developers_skills VALUES (2, 2);
+INSERT INTO developers_skills VALUES (2, 3);
+INSERT INTO developers_skills VALUES (3, 3);
+INSERT INTO developers_skills VALUES (3, 4);
+INSERT INTO developers_skills VALUES (4, 4);
+INSERT INTO developers_skills VALUES (4, 5);
+INSERT INTO developers_skills VALUES (5, 5);
+INSERT INTO developers_skills VALUES (5, 1);
+INSERT INTO developers_skills VALUES (6, 1);
+INSERT INTO developers_skills VALUES (6, 2);
+INSERT INTO developers_skills VALUES (7, 2);
+INSERT INTO developers_skills VALUES (7, 1);
+INSERT INTO developers_skills VALUES (8, 1);
+INSERT INTO developers_skills VALUES (8, 2);
+INSERT INTO developers_skills VALUES (9, 3);
+INSERT INTO developers_skills VALUES (9, 4);
+INSERT INTO developers_skills VALUES (10, 5);
+INSERT INTO developers_skills VALUES (10, 1);
 
-INSERT INTO skills VALUES (1, 'C++', 1);
-INSERT INTO skills VALUES (2, 'Java', 2);
-INSERT INTO skills VALUES (3, 'Web Technologies', 3);
-INSERT INTO skills VALUES (4, 'Linux', 4);
-INSERT INTO skills VALUES (5, 'DB', 5);
-INSERT INTO skills VALUES (6, 'DB', 2);
-INSERT INTO skills VALUES (7, 'Java', 4);
+INSERT INTO projects VALUES (1, 'RFC 231456', 1, 1);
+INSERT INTO projects VALUES (2, 'Main SIRIUS menu', 2, 2);
+INSERT INTO projects VALUES (3, 'Patch to PFR functional', 1, 1);
+INSERT INTO projects VALUES (4, 'SAMO', 2, 2);
+INSERT INTO projects VALUES (5, 'China Union Pay', 2, 2);
+INSERT INTO projects VALUES (6, 'RFC 231456', 1, 1);
+INSERT INTO projects VALUES (7, 'Main SIRIUS menu', 2, 2);
+INSERT INTO projects VALUES (8, 'Patch to PFR functional', 1, 1);
+INSERT INTO projects VALUES (9, 'SAMO', 2, 2);
+INSERT INTO projects VALUES (10, 'China Union Pay', 2, 2);
 
-INSERT INTO projects VALUES (1, 'RFC 231456', 'Luxoft', 1);
-INSERT INTO projects VALUES (2, 'Main SIRIUS menu', 'MTS', 2);
-INSERT INTO projects VALUES (3, 'Patch to PFR functional', 'Luxoft', 1);
-INSERT INTO projects VALUES (4, 'SAMO', 'MTS', 2);
-INSERT INTO projects VALUES (5, 'China Union Pay', 'MTS', 2);
-INSERT INTO projects VALUES (6, 'RFC 231456', 'Luxoft', 1);
-INSERT INTO projects VALUES (7, 'Main SIRIUS menu', 'MTS', 2);
-INSERT INTO projects VALUES (8, 'Patch to PFR functional', 'Luxoft', 1);
-INSERT INTO projects VALUES (9, 'SAMO', 'MTS', 2);
-INSERT INTO projects VALUES (10, 'China Union Pay', 'MTS', 2);
+INSERT INTO skills VALUES (1, 'C++');
+INSERT INTO skills VALUES (2, 'Java');
+INSERT INTO skills VALUES (3, 'Web Technologies');
+INSERT INTO skills VALUES (4, 'Linux');
+INSERT INTO skills VALUES (5, 'DB');

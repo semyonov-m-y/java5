@@ -1,54 +1,60 @@
-INSERT INTO companies VALUES (1, 'Luxoft');
-INSERT INTO companies VALUES (2, 'MTS');
+INSERT INTO companies (company_name) VALUES 
+('Luxoft'), 
+('MTS');
 
-INSERT INTO customers VALUES (1, 'Ivan', 'Ivanov', 'ivanov@mail.ru');
-INSERT INTO customers VALUES (2, 'Petr', 'Petrov', 'petrov@gmail.com');
+INSERT INTO customers (first_name, last_name, email) VALUES 
+('Ivan', 'Ivanov', 'ivanov@mail.ru'), 
+('Petr', 'Petrov', 'petrov@gmail.com');
 
-INSERT INTO developers VALUES (1, 'Slava', 'Chervoniy', 'cherv@mail.ru', 1);
-INSERT INTO developers VALUES (2, 'Grisha', 'Hlebnik', 'hleb@gmail.com', 2);
-INSERT INTO developers VALUES (3, 'Dasha', 'Beketova', 'bek@ngs.ru', 3);
-INSERT INTO developers VALUES (4, 'Sergey', 'Ovchinnikov', 'ovhin@yahoo.ru', 4);
-INSERT INTO developers VALUES (5, 'Ruslan', 'Baybekov', 'baybekov@ya.ru', 5);
-INSERT INTO developers VALUES (6, 'Elena', 'Levchenko', 'lev@mail.ru', 5);
-INSERT INTO developers VALUES (7, 'Sergey', 'Shubin', 'shuba@ya.ru', 4);
-INSERT INTO developers VALUES (8, 'Alex', 'Kotov', 'kot@gmail.com', 3);
-INSERT INTO developers VALUES (9, 'Alena', 'Bal', 'bal@ngs.ru', 2);
-INSERT INTO developers VALUES (10, 'Ruslan', 'Umerkaev', 'um@mal.ru', 1);
+INSERT INTO developers (first_name, last_name, email, project_id) VALUES 
+('Slava', 'Chervoniy', 'cherv@mail.ru', 1),
+('Grisha', 'Hlebnik', 'hleb@gmail.com', 2),
+('Dasha', 'Beketova', 'bek@ngs.ru', 3),
+('Sergey', 'Ovchinnikov', 'ovhin@yahoo.ru', 4),
+('Ruslan', 'Baybekov', 'baybekov@ya.ru', 5),
+('Elena', 'Levchenko', 'lev@mail.ru', 5),
+('Sergey', 'Shubin', 'shuba@ya.ru', 4),
+('Alex', 'Kotov', 'kot@gmail.com', 3),
+('Alena', 'Bal', 'bal@ngs.ru', 2),
+('Ruslan', 'Umerkaev', 'um@mal.ru', 1);
 
-INSERT INTO developers_skills VALUES (1, 1);
-INSERT INTO developers_skills VALUES (1, 2);
-INSERT INTO developers_skills VALUES (2, 2);
-INSERT INTO developers_skills VALUES (2, 3);
-INSERT INTO developers_skills VALUES (3, 3);
-INSERT INTO developers_skills VALUES (3, 4);
-INSERT INTO developers_skills VALUES (4, 4);
-INSERT INTO developers_skills VALUES (4, 5);
-INSERT INTO developers_skills VALUES (5, 5);
-INSERT INTO developers_skills VALUES (5, 1);
-INSERT INTO developers_skills VALUES (6, 1);
-INSERT INTO developers_skills VALUES (6, 2);
-INSERT INTO developers_skills VALUES (7, 2);
-INSERT INTO developers_skills VALUES (7, 1);
-INSERT INTO developers_skills VALUES (8, 1);
-INSERT INTO developers_skills VALUES (8, 2);
-INSERT INTO developers_skills VALUES (9, 3);
-INSERT INTO developers_skills VALUES (9, 4);
-INSERT INTO developers_skills VALUES (10, 5);
-INSERT INTO developers_skills VALUES (10, 1);
+INSERT INTO developers_skills (developer_id, skill_id) VALUES 
+(1, 1),
+(1, 2),
+(2, 2),
+(2, 3),
+(3, 3),
+(3, 4),
+(4, 4),
+(4, 5),
+(5, 5),
+(5, 1),
+(6, 1),
+(6, 2),
+(7, 2),
+(7, 1),
+(8, 1),
+(8, 2),
+(9, 3),
+(9, 4),
+(10, 5),
+(10, 1);
 
-INSERT INTO projects VALUES (1, 'RFC 231456', 1, 1);
-INSERT INTO projects VALUES (2, 'Main SIRIUS menu', 2, 2);
-INSERT INTO projects VALUES (3, 'Patch to PFR functional', 1, 1);
-INSERT INTO projects VALUES (4, 'SAMO', 2, 2);
-INSERT INTO projects VALUES (5, 'China Union Pay', 2, 2);
-INSERT INTO projects VALUES (6, 'RFC 231456', 1, 1);
-INSERT INTO projects VALUES (7, 'Main SIRIUS menu', 2, 2);
-INSERT INTO projects VALUES (8, 'Patch to PFR functional', 1, 1);
-INSERT INTO projects VALUES (9, 'SAMO', 2, 2);
-INSERT INTO projects VALUES (10, 'China Union Pay', 2, 2);
+INSERT INTO projects (project_name, company_id, customer_id) VALUES 
+('RFC 231456', 1, 1),
+('Main SIRIUS menu', 2, 2),
+('Patch to PFR functional', 1, 1),
+('SAMO', 2, 2),
+('China Union Pay', 2, 2),
+('RFC 231456', 1, 1),
+('Main SIRIUS menu', 2, 2),
+('Patch to PFR functional', 1, 1),
+('SAMO', 2, 2),
+('China Union Pay', 2, 2);
 
-INSERT INTO skills VALUES (1, 'C++');
-INSERT INTO skills VALUES (2, 'Java');
-INSERT INTO skills VALUES (3, 'Web Technologies');
-INSERT INTO skills VALUES (4, 'Linux');
-INSERT INTO skills VALUES (5, 'DB');
+INSERT INTO skills (skill) VALUES 
+('C++'),
+('Java'),
+('Web Technologies'),
+('Linux'),
+('DB');

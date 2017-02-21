@@ -1,3 +1,4 @@
-SELECT SUM(salary) FROM javaee.developers
-LEFT JOIN javaee.developers_skills ON javaee.developers_skills.developer_id = javaee.developers.id 
-WHERE skill_id = 2 GROUP BY skill_id;
+SELECT SUM(salary), skills.skill FROM developers
+LEFT JOIN developers_skills ON developers_skills.developer_id = developers.id
+LEFT JOIN skills ON skills.id = developers_skills.skill_id
+WHERE skill LIKE "Java" GROUP BY skill_id;
